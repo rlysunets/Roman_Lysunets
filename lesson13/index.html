@@ -8,6 +8,8 @@
     <title>Forms</title>
 
     <link rel="stylesheet" href="./assets/css/inter.css">
+    <link rel="stylesheet" href="assets/plugins/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/plugins/jquery.formstyler.theme.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -49,7 +51,8 @@
             <div class="address">
                 <div class="form_elem">
                     <label for="country">Country</label>
-                    <select name="country" id="country">
+                    <select name="country" id="country" data-placeholder="Select">
+                        <option></option>
                         <option>Ukraine</option>
                         <option>Canada</option>
                         <option>USA</option>
@@ -79,7 +82,6 @@
                     Log In
                 </a>
             </div>
-
         </form>
 
 
@@ -105,16 +107,13 @@
                             </div>
                             <input type="file" name="file">
                         </div>
-
                         <button type="reset" class="reset">
-                            <div class="basket">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M4.00016 12.6667C4.00016 13.4 4.60016 14 5.3335 14H10.6668C11.4002 14 12.0002 13.4 12.0002 12.6667V4.66667H4.00016V12.6667V12.6667ZM12.6668 2.66667H10.3335L9.66683 2H6.3335L5.66683 2.66667H3.3335V4H12.6668V2.66667V2.66667Z"
                                         fill="#969696" />
                                 </svg>
-                            </div>
                         </button>
                     </div>
                     <div class="file_hint">
@@ -133,7 +132,6 @@
                     <input type="email" name="email" id="email" required>
                 </div>
             </div>
-
             <div class="address">
                 <div class="form_elem">
                     <label for="country">Country</label>
@@ -148,7 +146,6 @@
                     <input type="text" name="city" id="city" required>
                 </div>
             </div>
-
             <div class="name">
                 <div class="form_elem">
                     <label for="zip">Zip Code</label>
@@ -159,10 +156,21 @@
                     <input type="number" name="number" id="number" required>
                 </div>
             </div>
-
             <button type="submit" class="update">Update</button>
         </form>
     </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/jquery.formstyler.min.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $('input[type="radio"], select').styler({
+                    selectSearch: true,
+                });
+            });
+        })(jQuery);
+    </script>
 </body>
 
 </html>
