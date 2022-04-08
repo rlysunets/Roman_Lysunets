@@ -44,7 +44,7 @@
          background-color: #F6F6F6;
          height: 800px;
          left: 0;
-         top: 0;
+         top: -1000px;
          display: block;
          transition: all .3s ease;
       &_item {
@@ -78,7 +78,7 @@
       }
    }
    .active {
-      top: -800px;
+      top: 0;
    }
    .container {
       width: 100%;
