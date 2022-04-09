@@ -109,9 +109,10 @@ ol, ul {
     position: relative;
     width: 440px;
     height: 280px;
+    perspective: 500px;
 }
 .flip_card:hover .inner {
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
 }
 .inner {
     position: absolute;
@@ -134,7 +135,7 @@ ol, ul {
 }
 .back {
     background-color: #000000;
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
 }
 .front_fix {
     background-color: #000000;
