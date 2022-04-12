@@ -1,0 +1,283 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+/* --------------------------------------------------------------------- */
+body {
+    font-family: Inter;
+    color: #545454;
+}
+.wrapper {
+    display: flex;
+}
+/* ----------------------------------------------------------------------- */
+.form {
+    margin: 10px;
+    padding: 20px 20px 30px;
+    border: 1px solid black;
+    width: 540px;
+}
+    .form__title {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.4px;
+        color: #1C1C1C;
+        margin: 0 0 20px 0;
+    }
+    .form__name {
+        display: flex;
+        gap: 12px;
+        margin: 0 0 20px 0;
+    }
+        .name__container {
+            display: flex;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+        }
+        .label-text {
+            font-size: 15px;
+            line-height: 22px;
+            letter-spacing: -0.2px;
+        }
+        .input {
+            width: 245px;
+            font-size: 20px;
+            border: 1px solid #e4e4e4;
+            border-radius: 8px;
+            padding: 8px 30px 8px 10px;
+            margin: 7px 0 0 0;
+        }
+        .input:focus {
+            outline: none;
+            border: 1px solid #007bff;
+        }
+        .valid-icon {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 42px;
+            width: 15px;
+            height: 15px;
+        }
+        .input:valid ~ .valid-icon {
+            display: block;
+        }
+        .invalid {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            background-color: #969696;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+        }
+        .input:invalid ~ .invalid {
+            display: block;
+        }
+    .form__email {
+        margin: 0 0 20px 0;
+    }
+        .email__input {
+            width: 100%;
+        }
+        .hint {
+            margin: 7px 0 0 0;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: -0.1px;
+            color: #969696;
+        }
+    .form__gender {
+        margin: 0 0 20px 0;    
+    }
+        .gender__container {
+            display: flex;
+            gap: 20px;
+        }
+        .gender {
+            display: flex;
+            align-items: center;
+        }
+        .gender__radio {
+            display: none;
+        }
+        .gender__custom-radio {
+            margin: 0 8px 0 0;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #e4e4e4;
+            border-radius: 50%;
+        }
+        .gender__radio:checked ~ 
+        .gender__custom-radio {
+            border: 6px solid blue;
+        }
+    .form__address {
+        display: flex;
+        gap: 12px;
+        margin: 0 0 20px 0;
+    }
+        .country__container {
+            display: flex;
+            flex-direction: column;
+        }
+        .country__select {
+            width: 245px;
+            font-size: 20px;
+            border: 1px solid #e4e4e4;
+            border-radius: 8px;
+            padding: 8px 30px 8px 10px;
+            margin: 7px 0 0 0;
+        }
+        .country__select:focus {
+            outline: none;
+            border: 1px solid #007bff;
+        }
+    .form__button {
+        margin: 0 0 22px 0;
+    }
+        .button {
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #e4e4e4;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 8px 30px 8px 10px;
+            margin: 7px 0 0 0;
+        }
+        .button:hover {
+            border: 1px solid #007bff;
+        }
+    .form__discription {
+        margin: 0 0 20px 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+        .discription__text {
+            width: 410px;
+            font-size: 13px;
+            line-height: 18px;
+            text-align: center;
+            letter-spacing: -0.1px;
+            color: #969696;  
+        }
+        .discription__link {
+            text-decoration: none;
+            color: #007bff;
+        }
+    .footer__border {
+        height: 1px;
+        width: 100%;
+        background-color: #E4E4E4;
+        margin: 0 0 20px 0;
+    }
+        .footer__content {
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            line-height: 22px;
+            letter-spacing: -0.2px;
+        }
+        .footer-log-in {
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: -0.1px;
+            color: #007BFF;
+        }  
+/* form-2=========================================================== */
+.title {
+    font-weight: 700;
+}
+.form__person-info {
+    display: flex;
+    margin: 0px 0px 20px 0px;
+}
+.person-info__photo {
+    margin: 0px 20px 0px 0px;
+}
+.photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.person-info__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.buttons {
+    display: flex;
+    cursor: pointer;
+}
+.input-file {
+    display: none;
+}
+.custom__input-file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 20px 0px 0px;
+    width: 138px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+}
+.camera {
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+.button-basket {
+    font-size: 20px;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.button-basket:focus {
+    outline: none;
+    border: 1px solid #007bff;
+}
+.basket {
+    width: 15px;
+    height: 15px;
+}
+.person-info__text {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+    color: #969696;
+}
+.form__numbers {
+    display: flex;
+    gap: 12px;
+    margin: 0 0 20px 0;
+}
+.new-button {
+    width: 150px;
+    padding: 10px;
+}

@@ -1,0 +1,161 @@
+* {
+    font-family: 'Open Sans', sans-serif; 
+    color: #070707;
+}
+
+p {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+}
+
+/*! header----------------------- */
+
+.header {
+    padding: 0 250px; 
+}
+
+.nav {
+    text-align: center;  
+    padding: 15px;
+    color: #828282;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.line {
+    height: 1px;
+    background-color: #828282;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 0 40px 0;
+}
+
+.list-item {
+    display: inline;
+    padding: 25px 20px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #828282;  
+}
+
+.link {
+    text-decoration: none;
+}
+
+.active, .link:hover {
+    color: #070707;
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    margin: 0 0 50px 0;
+}
+
+.img {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 0 100px 0;
+}
+
+/* ! main-------------------- */
+
+main {
+    padding: 0 250px; 
+}
+
+.grey {
+    background-color: #f6f6f6;    
+}
+
+.section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 46px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0 0 0;
+}
+
+.skill-icon {
+    margin: 0 0 25px 0;
+}
+
+.skill-text {
+    margin: 0 0 60px 0;
+}
+
+.star {
+    margin: 0 5px 0 0;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: url(./img/skills/empty_star.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.stars-1 .star:nth-child(-n + 4),
+.stars-2 .star:nth-child(-n + 4),
+.stars-3 .star:nth-child(-n + 3),
+.stars-4 .star:nth-child(-n + 4) {
+    background: url(./img/skills/star.png);
+}
+.portfolio-section:not(:last-child) {
+    margin: 70px 0 100px 0;
+}
+
+.portfolio-img {
+    width: 100%;
+}
+
+/* !footer--------------------------- */
+
+.footer {
+    padding: 0 250px;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.footer-button {
+    margin: 80px 0 40px 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background-color: #070707;
+    cursor: pointer;
+}
+
+.footer-button:hover {
+    opacity: 0.7;
+}
+
+.social-container {
+    margin: auto;
+    max-width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-logo {
+    margin: 45px 0 0 0;
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+}

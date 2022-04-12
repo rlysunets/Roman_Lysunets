@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #000000;
+}
+.container {
+    margin: 12px 40px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 20px;
+    line-height: 23px;
+}
+.header-text {
+    flex: 1 1 auto;
+    margin: 0 0 0 42px;
+}
+
+/* -------------------------------------------------------------- */
+.main {
+    margin: 80px 0 0 0;
+}
+.section {
+    position: relative;
+}
+.section p:not(:last-child) {
+    margin: 0 0 50px 0;
+}
+.section-title {
+    margin: 0 0 60px 0;
+}
+.title {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 0 20px;
+}
+.title-number {
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 28px;
+}   
+.section-text {
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 100px 0;
+}
+.underline {
+    text-decoration: underline;
+}
+.bold {
+    font-weight: 700;
+}
+.grey {
+    background-color: rgb(245, 243, 243);
+}

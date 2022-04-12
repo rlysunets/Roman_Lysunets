@@ -1,0 +1,37 @@
+body {
+    margin: 20px auto;
+    width: 800px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a:hover {
+    font-size: 18px;color: red;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery-images img {
+    width: 260px;
+}
+
+.cv {
+    margin: 10px 0;
+}
+
+.iframe-video {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+/* ----------------------------------------------------------- */
+body {
+    font-family: Poppins;
+}
+.container {
+    margin: 0 130px 0 140px;
+}
+.header {
+    align-items: center;
+    margin: 20px 0 30px 0;
+}
+.header-logo {
+    display: inline-block;
+    padding: 25px 160px 25px 0;
+}
+.header-menu {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 28px;
+    color: #2F281E;
+}
+.menu-item {
+    display: inline-block;
+    cursor: pointer;
+}
+.menu-item:hover {
+    text-decoration: underline;
+}
+.menu-item:not(:last-child) {
+    padding: 0 25px 0 0;
+}
+.menu-item:last-child {
+    padding: 0 50px 0 0;
+}
+.header-buttons {
+    display: inline-block;
+}
+.button {
+    display: inline-block;
+    padding: 11px 25px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #173A56;
+    border: 1px solid #173A56;
+    border-radius: 4px;
+    margin: 0 15px 0 0;
+}
+.button:hover {
+    background-color: #faefe0;
+}
+.orange {
+    background-color: #FF9900;
+    color: #fff;
+    border: none;
+}
+.orange:hover {
+    background-color: #ffb13b;
+}
+
+/* main-------------------------------------------------------------- */
+.get-started {
+    width: 100%;
+}
+.section-content {
+    display: inline-block;
+    width: 46%;
+    padding: 110px 0;
+}
+.main-title {
+    display: block;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 54px;
+    color: #2F281E;
+    margin: 0 0 30px 0;
+}
+.content-text {
+    margin: 0 0 45px 0;
+    font-size: 18px;
+    line-height: 28px;
+    color: #544837;
+}
+.video {
+    display: inline-block;
+    text-align: center;  
+    position: relative;
+}
+.video-icon {
+    position: relative;
+    top: 3px;
+    left: 0;
+}
+.video-link {
+   text-decoration: underline;
+    color: #FF9900;
+    font-weight: 600;
+    line-height: 24px; 
+    padding: 0 0 0 5px;
+}
+.section-image {
+    display: inline-block;
+    width: 53%;
+}

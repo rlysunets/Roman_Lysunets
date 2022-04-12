@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inter:regular,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="https://google.com" class="form">
+            <div class="form__title">
+                Create an Account
+            </div>
+
+            <div class="form__name">
+                <div class="form__first-name name">
+                    <div class="name__container container">
+                        <label for="first-name" class="name__label-text label-text">
+                            First Name
+                            <input type="text" class="name__input input" id="first-name" required>
+                            <img src="./img/Cheak.png" class="name__valid-icon valid-icon" alt="icon valid">
+                            <div class="name__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="form__last-name name">
+                    <div class="name__container container">
+                        <label for="last-name" class="name__label-text label-text">
+                            Last Name
+                            <input type="text" class="name__input input" id="last-name" required>
+                            <img src="./img/Cheak.png" class="name__valid-icon valid-icon" alt="icon valid">
+                            <div class="name__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form__email">
+                <div class="email__container container">
+                    <label for="email" class="email__label-text label-text">
+                        E-mail
+                        <input type="email" class="email__input input" id="email" required>
+                        <img src="./img/Cheak.png" class="email__valid-icon valid-icon" alt="icon valid">
+                        <div class="email__invalid invalid"></div>
+                        <span class="email__hint hint">We'll never share your email with anyone else.</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form__gender">
+                <div class="gender__container">
+                    <label for="male" class="gender__male gender">
+                        <input type="radio" class="gender__radio" id="male" name="gender" checked>
+                        <div class="gender__custom-radio"></div>
+                        Male
+                    </label>
+                    <label for="female" class="gender__female gender">
+                        <input type="radio" class="gender__radio" id="female" name="gender">
+                        <div class="gender__custom-radio"></div>
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="form__address">
+                <div class="form__country country">
+                    <div class="country__container container">
+                        <label for="country" class="country__label-text label-text">
+                            Country
+                        </label>
+                        <select class="country__select" id="country">
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="Canada">Canada</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__city city">
+                    <div class="city__container container">
+                        <label for="city" class="city__label-text label-text">
+                            City
+                            <input type="text" class="city__input input" id="city" required>
+                            <img src="./img/Cheak.png" class="city__valid-icon valid-icon" alt="icon valid">
+                            <div class="city__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form__button">
+                <button type="submit" class="button">Send</button>
+            </div>
+
+            <div class="form__discription discription">
+                <div class="discription__text">
+                    By clicking the 'Sign Up' button, you confirm that you accept our
+                    <a href="#" class="discription__link">
+                        Terms of Use
+                    </a>
+                    and
+                    <a href="#" class="discription__link">
+                        Privacy Policy
+                    </a>
+                    .
+                </div>
+            </div>
+
+            <div class="form__footer footer">
+                <div class="footer__border"></div>
+                <div class="footer__content">
+                    Have an account?
+                    <a href="#" class="footer-log-in">
+                        Log In
+                    </a>
+                </div>
+            </div>
+
+        </form>
+
+        <form action="https://google.com" class="form">
+            <div class="form__title title">
+                Profile
+            </div>
+
+            <div class="form__person-info person-info">
+                <div class="person-info__photo">
+                    <img src="./img/📷 Image.png" alt="user photo" class="photo">
+                </div>
+
+                <div class="person-info__buttons">
+                    <div class="buttons">
+                        <label for="file">
+                            <input type="file" class="input-file" id="file">
+                            <div class="custom__input-file input">
+                                add photo
+                                <img src="./img/camera.svg" alt="" class="camera">
+                            </div>
+                        </label>
+
+                        <button type="reset" class="button-basket">
+                            <img src="./img/🔹 Icon Color.svg" alt="icon basket" class="basket">
+                        </button>
+                    </div>
+
+                    <div class="person-info__text">
+                        Up to 1 MB (300x300 px)
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form__name">
+                <div class="form__first-name name">
+                    <div class="name__container container">
+                        <label for="first-name" class="name__label-text label-text">
+                            Name
+                            <input type="text" class="name__input input" id="first-name" required>
+                            <img src="./img/Cheak.png" class="name__valid-icon valid-icon" alt="icon valid">
+                            <div class="name__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="email__container container">
+                    <label for="email" class="email__label-text label-text">
+                        E-mail
+                        <input type="email" class="email__input input" id="email" required>
+                        <img src="./img/Cheak.png" class="email__valid-icon valid-icon" alt="icon valid">
+                        <div class="email__invalid invalid"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form__address">
+                <div class="form__country country">
+                    <div class="country__container container">
+                        <label for="country" class="country__label-text label-text">
+                            Country
+                        </label>
+                        <select class="country__select" id="country">
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="Canada">Canada</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__city city">
+                    <div class="city__container container">
+                        <label for="city" class="city__label-text label-text">
+                            City
+                            <input type="text" class="city__input input" id="city" required>
+                            <img src="./img/Cheak.png" class="city__valid-icon valid-icon" alt="icon valid">
+                            <div class="city__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form__numbers">
+                <div class="form__zip-code zip-code">
+                    <div class="zip-code__container container">
+                        <label for="zip-code" class="zip-code__label-text label-text">
+                            Zip Code
+                            <input type="text" class="zip-code__input input" id="zip-code" required>
+                            <img src="./img/Cheak.png" class="zip-code__valid-icon valid-icon" alt="icon valid">
+                            <div class="zip-code__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form__phone-number name">
+                    <div class="phone-number__container container">
+                        <label for="phone-number" class="phone-number__label-text label-text">
+                            Phone Number
+                            <input type="text" class="phone-number__input input" id="phone-number" required>
+                            <img src="./img/Cheak.png" class="phone-number__valid-icon valid-icon" alt="icon valid">
+                            <div class="phone-number__invalid invalid"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form__button">
+                <button type="submit" class="button new-button">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

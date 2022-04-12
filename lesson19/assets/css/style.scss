@@ -1,0 +1,73 @@
+@import "reset";
+
+.article {
+    padding: 73px 0 170px 0;
+    &_subtitle {
+        line-height: 150%;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        margin: 0 0 48px 0;
+    }
+    &_title {
+        font-family: 'Red Hat Display';
+        font-size: 3rem;
+        line-height: 4rem;
+        letter-spacing: 0.05em;
+        margin: 0 0 64px 0;
+    }
+    &_view {
+        font-family: 'Red Hat Display';
+        font-size: 1.45rem;
+        line-height: 166%;
+        letter-spacing: 0.1em;
+        margin: 0 0 40px 0;
+    }
+    &_text{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        letter-spacing: 0.05em;
+        color: #565656;
+        margin: 0 0 211px 0;
+        max-width: 544px;
+        p {
+            margin: 0 0 35px 0;
+        }
+    }
+}
+.image {
+    margin: 0 0 130px 0;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article {
+    &_section {
+        &:not(:last-child) {
+            margin: 0 0 128px 0;
+        }
+    }
+}
+.section {
+    &_title {
+        font-family: 'Red Hat Display';
+        font-size: 1.45rem;
+        line-height: 166%;
+        letter-spacing: 0.1em;
+        margin: 0 0 40px 0;
+    }
+    &_image {
+        margin: 0 0 50px 0;
+    }
+    &_text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        letter-spacing: 0.05em;
+        color: #565656;
+        p:not(:last-child) {
+            margin: 0 0 30px 0;
+        }
+    }
+}
