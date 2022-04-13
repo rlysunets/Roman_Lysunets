@@ -2,12 +2,7 @@
 
 .burger {
    display: none;
-
 }
-.menu-mobile {
-   display: none;
-}
-
 .header {
    margin: 0 0 30px 0;
 }
@@ -31,7 +26,6 @@
       }
    }
 }
-
 .header-buttons {
    padding: 25px 0;
 }
@@ -54,12 +48,9 @@
    color: #fff;
    &:hover {
       background-color: #FF9900;
-      text-decoration: none;
       opacity: .7;
    }
 }
-
-
 /* main----------------------------------------- */
 .get-started {
    margin: 0 0 110px 0;
@@ -102,6 +93,14 @@
 }
 .video-link:hover {
    color: #ff9900d2;
+}
+.section-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   img {
+      width: 100%;
+   }
 }
 /* ------------------------------------------- */
 .sign-up-now {
@@ -161,8 +160,8 @@
 .design-content {
    display: flex;
    flex-direction: column;
-   max-width: 490px;
-   padding: 25px 10px 0 0;
+   // max-width: 490px;
+   padding: 25px 30px 0 0;
 }
 .design-content-info {
    font-weight: 500;
@@ -197,11 +196,27 @@
    color: #544837;
    margin: 0 0 25px 0;
 }
+.design-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   img {
+      width: 100%;
+   }
+}
 /* ----------------------------------------------------- */
 .product {
    margin: 0 0 100px 0;
    display: flex;
    justify-content: space-between;
+}
+.product-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   img {
+      width: 100%;
+   }
 }
 .product-content {
    display: flex;
@@ -284,6 +299,14 @@
    color: #544837;
    margin: 0 0 25px 0;
 }
+.marketers-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   img {
+      width: 100%;
+   }
+}
 /* --------------------------------------------------------- */
 .footer {
    border-top: 1px solid #BCD0E5;
@@ -324,84 +347,15 @@
    justify-content: flex-end;
 }
 .footer-button {
-   padding: 8px 15px;  
+   padding: 8px 15px;
+   margin: 0;  
 }
 input {
+   font-family: 'Poppins';
+   padding: 0 10px;
+   font-size: 16px;
    margin: 0 0 20px 0;
-   width: 300px;
+   min-width: 300px;
    height: 50px;
    border: #BCD0E5 1px solid;
-}
-
-
-// !-----------------------------------------------------
-
-@media (max-width: 1100px) {
-   .menu_block {
-      display: none;
-   }
-   .header_container {
-      justify-content: flex-end;
-   }
-   .header_logo {
-      padding: 0 0 0 60px;
-   }
-
-   .header-buttons {
-      align-items: center;
-   }
-   .burger {
-      display: block;
-      position: absolute;
-      left: 25px;
-      top: 19px;
-      z-index: 10;
-   }
-   .get-started {
-      margin: 0 0 30px 0;
-   }
-   .section-content {
-      padding: 0; 
-      margin: 0; 
-   }
-   .content-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      .video {
-         margin: 30px 0 0 -20px;
-      }
-   }
-}
-
-@media (max-width: 999px) {
-   .get-started {
-      flex-wrap: wrap;
-      .section-image {
-         // padding: 0;
-         margin: 0 auto;
-      }
-   }
-   .design {
-      margin: 0 0 50px 0;
-      flex-wrap: wrap;
-   }
-   .product {
-      margin: 0 0 50px 0;
-      flex-wrap: wrap;
-
-   }
-   .marketers {
-      margin: 0 0 50px 0;
-      flex-wrap: wrap;
-      .marketers-content {
-         flex: 100%;
-      }
-
-   }
-   .footer {
-      padding: 0 0 50px 0;
-   }
-   .footer-logo {
-      padding: 50px 0 30px 0;
-   }
 }
