@@ -1,0 +1,136 @@
+@media screen and (max-width: 1024px) {
+    .main_header {
+        padding: 80px 0 120px;
+        gap: 120px;
+        .hello {
+            .title {
+                font-size: 2rem;
+                line-height: 3rem;
+            }   
+        }
+    }
+    .we_love_work {
+        padding: 50px 0 40px;
+        display: block;
+        &_text {
+            margin-bottom: 30px;
+        }
+        ul {
+            columns: 2;
+            column-gap: 20px;
+        }
+    }
+    .awards_item {
+        padding: 40px 0 50px;
+        grid-template-columns: 250px 1fr;
+    }
+    .award_item {
+        gap: 20px;
+    }
+    .footer_contant {
+        padding: 90px 0 49px;
+        gap: 80px;
+    }
+}
+@media (max-width: 768px) {
+    .main_header {
+        padding: 40px 0 60px;
+        gap: 20px;
+        .hello {
+            .subtitle {
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+            .title {
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }   
+        }
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .awards_item {
+        display: block;
+        .awards_name {
+            margin-bottom: 30px;
+        }
+    }
+    .footer_contant {
+        padding: 50px 0 40px;
+        .footer_links {
+            justify-content: center;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .main_header {
+        display: block;
+        .kredo {
+            margin-top: 50px;
+            text-align: right;
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    .footer_contant {
+        grid-template-columns: 1fr 1fr; 
+        .footer_logo {
+            display: none;
+        }
+        .footer_links {
+            justify-content: start;
+        }
+        .socials {
+            justify-content: end;
+            li a i {
+                font-size: 1.5rem;
+                line-height: 1.6rem;
+            }
+        }
+    }
+}
+@media (max-width: 425px) {
+    .main_header {
+        padding: 30px 0 30px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .we_love_work {
+        padding: 30px 0;
+        &_text {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        ul {
+            columns: 1;
+        }
+    }
+    .award_item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .award_title {
+            grid-row-start: span 2;
+        }
+        .award_year {
+            text-align: left;
+        }
+    }
+    .footer_contant {
+        grid-template-columns: 1fr; 
+        .footer_links {
+            justify-content: center;
+        }
+        .socials {
+            justify-content: center;
+            li a i {
+                font-size: 2.5rem;
+                line-height: 2.6rem;
+            }
+        }
+    }
+}
