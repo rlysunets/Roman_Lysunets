@@ -62,6 +62,7 @@
       </nav>
 
    </div>
+   <div id="over_lay"></div>
   
    <header class="header">
       <div class="container">
@@ -114,10 +115,10 @@
                   </span>
                </div>
             </div>
-            <div class="user_photo">
-               <img src="assets/img/photo.jpg" alt="photo" class="desktop">
-               <img src="assets/img/photo_mobile.jpg" alt="photo" class="mobile">
-            </div>
+            <picture class="user_photo">
+               <source srcset="assets/img/photo_mobile.jpg" media="(max-width: 480px)">
+               <img src="assets/img/photo.jpg" alt="Denis Novik photo">
+            </picture>
          </section>
       </div>
       <section class="about_section" id="about">
@@ -294,6 +295,25 @@
       </div>
    </footer>
 
-   <script src="assets/js/dist/script.dev.js"></script>
+   <script 
+      src="assets/js/jquery-3.6.0.min.js">
+   </script>
+   <script>
+      function toggleMenu() {
+         $(".hamburger").toggleClass("is-active");
+         $(".menu-mobile").toggleClass("active");
+         $("#over_lay").toggleClass("open");
+      }
+
+     $(function() {
+         $(".hamburger, .menu-mobile_link, #over_lay").on("click", function() {
+            toggleMenu();
+         })
+         $(".header_link, .menu-mobile_link").on("click", function(event) {
+            event.preventDefault();
+            $("html, body").animate({scrollTop:$($(this).attr("href")).offset().top}, 500)
+         })
+     })
+   </script>
 </body>
 </html>
