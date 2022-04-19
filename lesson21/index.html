@@ -8,12 +8,38 @@
 
     <link rel="stylesheet" href="assets/css/font.min.css">
     <link rel="stylesheet" href="assets/css/iconmoon.min.css">
+    <link rel="stylesheet" href="assets/css/burder.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
 </head>
 
 <body>
-    <header class="header">
+    <div class="menu-mobile-block">
+        <div class="burger">
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+        <nav class="menu-mobile">
+            <ul class="menu-mobile_list">
+                <li class="menu-mobile_item">
+                    <a href="#" class="menu-mobile_link">
+                        Projects
+                    </a>
+                </li>
+                <li class="menu-mobile_item">
+                    <a href="#" class="menu-mobile_link">
+                        Contact
+                    </a>
+                </li>
+            </ul>  
+        </nav>
+    </div>
+    <div id="over_lay"></div>
+
+    <header id="header">
         <div class="container">
             <div class="header_contant">
                 <div class="header_logo">
@@ -236,5 +262,8 @@
         </div>
     </footer>
 
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/dist/script.dev.js"></script>
+    
 </body>
 </html>
