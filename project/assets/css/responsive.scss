@@ -1,0 +1,131 @@
+@media (max-width: 1200px) {
+    .steps_wrapper {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 992px) {
+    .border {
+        &::before,
+        &::after {
+            width: 300px;
+            left: -280px;
+        }
+        &::after {
+            left: 45px;
+        }
+    }
+}
+@media (max-width: 900px) {
+    .header_menu {
+        display: none;
+    }
+    .burger {
+       display: block;
+       position: relative;
+       right: 0;
+       top: -15px;
+    }
+    .choose {
+        padding: 100px 0 60px 0;
+    }
+    .choose_wrapper {
+        gap: 15px;
+        flex-direction: column;
+        .choose_content {
+            flex: 0 1 100%;
+            &_title {
+                margin-top: 0;
+            }      
+            &_desc {
+                max-width: 100%;
+            }             
+        }
+    }
+    .choose_photos {
+        flex: 100%;
+    }
+    .steps {
+        padding: 60px;
+    }
+    .steps_wrapper {
+        .step {
+            flex: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+            .step_descr {
+                line-height: 3rem;
+            }
+        }
+    }
+    .border {
+        &::before,
+        &::after {
+            display: none;
+        } 
+    }
+    .tourist_title {
+        line-height: 3rem;
+    }
+    .tourist_content {
+        &_photo {
+            flex-basis: 50%;
+        }
+        &_discr {
+            flex-basis: 50%;
+            padding: 49px 25px 49px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .intro_content_form { 
+        flex-direction: column;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    input[type="search"] {
+        padding: 19px 50px;
+        width: 100%;
+    }
+    .form_btn {
+        width: 100%;
+        padding: 20px 50px;
+    }
+    .tourist {
+        padding: 132px 0 100px;
+    }
+    .tourist_content {
+        flex-wrap: wrap;
+        &_photo {
+            flex-basis: 100%;
+        }
+        &_discr {
+            flex-basis: 100%;
+            padding: 49px 25px 49px;
+        }
+    }
+    .footer {
+        padding: 60px 0 40px;
+        &_socials {
+            gap: 40px;
+            li a {
+                font-size: 1.8rem;
+                line-height: 1.625rem;
+            }
+        }
+    }
+}
+@media (max-width: 550px) {
+    .intro_content_title {
+        font-size: 2.5rem;
+        letter-spacing: 3.8px;
+    }
+    input[type="search"] {
+        padding: 19px 20px;
+        width: 100%;
+    }
+    .form_btn {
+        padding: 20px;
+    }
+}

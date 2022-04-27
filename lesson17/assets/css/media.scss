@@ -28,12 +28,12 @@
          &.active {
             transform: translateX(0);
          }
-      &_item {
-         &:not(:last-child) {
-            margin: 0 0 30px 0;
+         &_item {
+            &:not(:last-child) {
+               margin: 0 0 30px 0;
+            }
          }
-      }
-      &_link {
+         &_link {
          font-weight: 700;
          font-size: 2.125rem;
          line-height: 2.625rem;
