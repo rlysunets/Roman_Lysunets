@@ -129,3 +129,14 @@
         padding: 20px;
     }
 }
+@media (max-width: 375px) {
+    input[type="search"] {
+        letter-spacing: 1.2px;
+    }
+    .footer {
+        padding: 30px 0;
+        &_socials {
+            gap: 20px;
+        }
+    }
+}
