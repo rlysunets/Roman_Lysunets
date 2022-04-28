@@ -50,7 +50,7 @@ $blue: #5474FD;
             border-left: 2px solid #fff;
             border-bottom: 2px solid #fff;
             transform: rotate(-45deg);
-        }
+        }   
     }
 }
 input[type="search"] {
@@ -63,6 +63,7 @@ input[type="search"] {
     color: #999999;
     border: none;
     outline: 0;
+    text-align: center;
     &:hover,
     &:focus,
     &:active {
@@ -71,10 +72,10 @@ input[type="search"] {
 }
 .form_btn {
     width: 153px;
-    padding: 0 0 0 35px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
     font-family: 'Aleo';
     font-size: .875rem;
     line-height: 1.625rem;
@@ -83,7 +84,6 @@ input[type="search"] {
     color: #FFFFFF;
     background-color: $blue;
     border: 2px solid #FFFFFF;
-    text-align: center;
     cursor: pointer;
     &:hover,
     &:focus,
@@ -96,14 +96,8 @@ input[type="search"] {
 svg {
     fill: #fff;
 }
-button:hover svg,
-button:hover,
-button:focus,
-button:active {
+button:hover svg {
     fill: rgba(255, 255, 255, .7);
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, .7);
-    background-color: #496BFE;
 }
 // header styles ===================================================
 .burger,
@@ -169,7 +163,7 @@ button:active {
     height: 83px;
     &.fixed {
         position: fixed;
-        z-index: 100;
+        z-index: 1000;
         left: 0;
         top: 0;
         height: 60px;
@@ -179,41 +173,43 @@ button:active {
         -webkit-backdrop-filter: blur(4px);
                 backdrop-filter: blur(4px);
     }
-    .header_menu {
-        &_list {
-            font-size: .875rem;
+}
+.header_menu {
+    .menu_list {
+        display: flex;
+        gap: 43px;
+        li a {
             line-height: 1.625rem;
+            font-size: .875rem;
             text-transform: uppercase;
-        }
+        } 
     }
+}
+.menu_link {
+    display: block;
+    &:hover {
+        transform: scale(1.2);
+    }
+
 }
 .header_wrapper {
     display: flex;
     justify-content: space-between;
 }
-.menu_list {
-    display: flex;
-    gap: 43px;
-}
-a {
-    line-height: 1.625rem;
-    font-size: .875rem;
-    text-transform: uppercase;
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-    }
-} 
+
+
 // chooose styles ===============================================
 .choose {
+    background-color: #3d3b3c;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: left;
     padding: 120px 0;
 }
 .choose_wrapper {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 10px;
     width: 100%;
     .choose_content {
         flex: 58.5%;
@@ -297,13 +293,14 @@ a {
         height: 190px;
         border-radius: 50%;
         position: absolute;
-        left: -330px;
+        left: 60%;
         top: -40px;
         border: 2px solid transparent;
         border-top: 2px solid #FFFFFF;
     }
     &::after {
-        left: 55px;
+        left: auto;
+        right: 60%;
     }
 }
 .icon { 
@@ -311,15 +308,16 @@ a {
   height: 60px;
   margin: .5em;
 }
-// spain styles ========================================================
-.spain {
+// country styles ========================================================
+.country {
+    background-color: #aaa6bd;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 225px 0 99px;
 }
-.spain_content {
-    background: rgba(35, 35, 35, .9);
+.country_content {
+    background-color: rgba(35, 35, 35, .9);
     max-width: 543px;
     padding: 48px 30px;
     font-family: 'Josefin Sans';
@@ -340,13 +338,17 @@ a {
         font-size: 1rem;
     }
 }
-// spain mount styles ========================================================
-.spain-mount_wrapper {
+// country mount styles ========================================================
+.country-mount {
+    background-color: #3e1c23;
+}
+.country-mount_wrapper {
     display: flex;
     justify-content: flex-end;
 }
 // Tourist styles ============================================================
 .tourist {
+    background-color: #252525;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 132px 0 200px;

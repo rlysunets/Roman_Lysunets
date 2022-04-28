@@ -13,7 +13,9 @@ $(function() {
 
 $("#scroll, .hamburger").on("click", function(event) {
     event.preventDefault();
-    $("html, body").animate({scrollTop:741}, 500);
+    if ($(window).scrollTop() < 740) {
+        $("html, body").animate({scrollTop:741}, 500);
+    }
 })
 
 $(".header_logo").on("click", function(event) {
@@ -33,3 +35,4 @@ $(window).on("scroll", function () {
         $(".header").removeClass("fixed");
     }
 })
+
