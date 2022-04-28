@@ -39,6 +39,7 @@ $blue: #5474FD;
         letter-spacing: 2.8px;
         position: relative;
         cursor: pointer;
+        transition: all .4s ease;
         &::after {
             content: "";
             display: block;
@@ -50,7 +51,10 @@ $blue: #5474FD;
             border-left: 2px solid #fff;
             border-bottom: 2px solid #fff;
             transform: rotate(-45deg);
-        }   
+        } 
+        &:hover {
+            transform: scale(1.1);
+        }  
     }
 }
 input[type="search"] {
@@ -190,14 +194,11 @@ button:hover svg {
     &:hover {
         transform: scale(1.2);
     }
-
 }
 .header_wrapper {
     display: flex;
     justify-content: space-between;
 }
-
-
 // chooose styles ===============================================
 .choose {
     background-color: #3d3b3c;
@@ -255,11 +256,18 @@ button:hover svg {
     letter-spacing: 3.2px;
     line-height: 1.625rem;
     text-transform: uppercase;
+    border: none;
     width: 228px;
     height: 63px;
-    background-color: $blue;
+    background: rgb(84,116,253);
+    background: linear-gradient(42deg, rgb(73,107,254,1) 40%, rgba(84,116,253,1) 40%);
+    background-size: 100%;
     color: #ffffff;
     cursor: pointer;
+    transition: all .6s ease;
+    &:hover {
+        background-size: 300%;
+    }
 }
 // steps styles==================================================================
 .steps {
@@ -268,7 +276,7 @@ button:hover svg {
 }
 .steps_wrapper {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     .step {
         flex: 33.33%;
         display: flex;
@@ -281,6 +289,10 @@ button:hover svg {
             font-size: 2.250rem;
             line-height: 1.625rem;
             color: #E8E8E8;
+            transition: all .8s ease;
+            &:hover {
+                color: rgba(84, 116, 253, .8);
+            }
         }
     }
 }
@@ -289,8 +301,8 @@ button:hover svg {
     &::before,
     &::after {
         content: '';
-        width: 350px;
-        height: 190px;
+        width: 80%;
+        height: 90px;
         border-radius: 50%;
         position: absolute;
         left: 60%;
@@ -302,6 +314,9 @@ button:hover svg {
         left: auto;
         right: 60%;
     }
+}
+.border:hover .step_descr {
+    color: #ff6363;
 }
 .icon { 
   width: 60px; 
