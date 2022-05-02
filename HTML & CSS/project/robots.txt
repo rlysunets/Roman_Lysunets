@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rlysunets.github.io/Roman_Lysunets/project/sitemap.xml
-Host: rlysunets.github.io/Roman_Lysunets/project/index.html
