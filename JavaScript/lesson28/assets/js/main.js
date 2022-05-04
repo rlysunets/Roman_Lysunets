@@ -23,11 +23,11 @@ function findFiles() {
 }
 
 function findChocolates() {
-    const money = prompt("How much money do you have?");
-    const price = prompt("What is chocolate price?");
+    const money = +prompt("How much money do you have?");
+    const price = +prompt("What is chocolate price?");
     const canBuy = Math.trunc(money / price);
     const rest = Math.round((money - (price * canBuy)) * 100) / 100;
-    (price >= money) ? alert(`You can buy: ${canBuy} chocolates. The rest is: ${rest} $`) :
+    (money >= price) ? alert(`You can buy: ${canBuy} chocolates. The rest is: ${rest} $`) :
         alert("You don't have enough money!");
 }
 
