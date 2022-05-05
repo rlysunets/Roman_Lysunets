@@ -240,3 +240,74 @@ function enterNum() {
             alert(`Введи від 0 до 9`);
     }
 }
+
+function theSameNum() {
+    const num = parseInt(prompt("Enter three-digit number"));
+    const firstDigit = Math.trunc(num / 100);
+    const secondDiit = Math.trunc((num % 100) / 10);
+    const lastDigit = num % 10;
+    if (firstDigit === secondDiit || firstDigit === lastDigit || secondDiit === lastDigit) {
+        alert("True");
+    } else {
+        alert("False");
+    }
+}
+
+function leapYear() {
+    const year = parseInt(prompt("Enter a year"));
+    if (year % 400 === 0 || year % 4 === 0 && year % 100 !== 0) {
+        alert("It is a leap year");
+    } else {
+        alert("It is not a leap year");
+    }
+}
+
+function polindrom() {
+    const num = parseInt(prompt("Enter five-digit number"));
+    const firstDigit = Math.trunc(num / 10000);
+    const secondDigit = Math.trunc((num % 10000) / 1000);
+    const foursDigit = Math.trunc((num % 100) / 10);
+    const lastDigit = num % 10;
+    firstDigit === lastDigit && secondDigit === foursDigit ? alert("Number is polindrom") : alert("Err. Try again");
+}
+
+function cash() {
+    const sum = parseInt(prompt("Enter sum"));
+    const currency = prompt("Choose currency: EUR, UAN or AZN");
+    switch (currency) {
+        case "EUR":
+            alert(`You will resive ${sum * 0.95} EUR`);
+            break;
+        case "UAN":
+            alert(`You will resive ${sum * 29} UAN`);
+            break;
+        case "AZN":
+            alert(`You will resive ${sum * 1.7} AZN`);
+            break;
+        default:
+            alert("No such currency. Choose EUR, UAN or AZN.")
+    }
+}
+
+function discount() {
+    const sum = parseInt(prompt("Enter purchase amount"));
+    if (sum >= 200 && sum < 300) {
+        alert("Discount: 3%");
+    } else if (sum >= 300 && sum < 500) {
+        alert("Discount:5%");
+    } else if (sum >= 500) {
+        alert("Discount: 7%");
+    } else {
+        alert("Discount is provided for purchases from 200$");
+    }
+}
+
+function square() {
+    const square = parseInt(prompt("Введіть периметр квадрата"));
+    const circle = parseInt(prompt("Введіть довжину кола"));
+    const squareSide = square / 4;
+    const circleDiametr = Math.round((circle / Math.PI) *10) / 10;
+    console.log(squareSide);
+    console.log(circleDiametr);
+    squareSide >= circleDiametr ? alert("Коло поміститься у квадрат") : alert("Коло не поміститься у квадрат");
+}
