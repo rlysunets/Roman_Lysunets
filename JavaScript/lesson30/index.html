@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="display-5">
+            Lesson30 Функції
+        </h2>
+
+        <div class="card mb-4">
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 2
+                    </p>
+                    <p>
+                        Створи функцію, яка буде виводити кількість переданих їй аргументів.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <!-- <input type="number" class="form-control mb-5" id="i-1"> -->
+                        <button class="btn btn-primary" type="button" onclick="sum()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-2"></span> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 3
+                    </p>
+                    <p>
+                        Напиши функцію, яка приймає 2 числа і повертає :
+                            -1, якщо перше число менше, ніж друге; 
+                            1 - якщо перше число більше, ніж друге; 
+                            0 - якщо числа рівні.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-5" id="i-3.1">
+                        <input type="number" class="form-control mb-5" id="i-3.2">
+                        <button class="btn btn-primary" type="button" onclick="task3()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-3"></span> 
+                    </div>
+                </div>
+            </div>  
+
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 4
+                    </p>
+                    <p>
+                        Напиши функцію, яка обчислює факторіал переданого їй числа.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-5" id="i-4">
+                        <button class="btn btn-primary" type="button" onclick="task4()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-4"></span> 
+                    </div>
+                </div>
+            </div> 
+
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 5
+                    </p>
+                    <p>
+                        Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-1" id="i-5.1">
+                        <input type="number" class="form-control mb-1" id="i-5.2">
+                        <input type="number" class="form-control mb-1" id="i-5.3">
+                        <button class="btn btn-primary" type="button" onclick="task5()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-5"></span> 
+                    </div>
+                </div>
+            </div> 
+
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 6
+                    </p>
+                    <p>
+                        Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-5" id="i-6.1">
+                        <input type="number" class="form-control mb-5" id="i-6.2">
+                        <button class="btn btn-primary" type="button" onclick="task6()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-6"></span> 
+                    </div>
+                </div>
+            </div> 
+
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 7
+                    </p>
+                    <p>
+                        Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-5" id="i-7">
+                        <button class="btn btn-primary" type="button" onclick="task7()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-7"></span> 
+                    </div>
+                </div>
+            </div> 
+
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 8
+                    </p>
+                    <p>
+                        Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-5" id="i-8.1">
+                        <input type="number" class="form-control mb-5" id="i-8.2">
+                        <button class="btn btn-primary" type="button" onclick="task8()">Виконати</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-8"></span> 
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

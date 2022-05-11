@@ -161,20 +161,69 @@ function tenNums() {
 }
 
 function whatDay() {
-    const days = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота", "Неділя"];
+    // const days = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота", "Неділя"];
+    // let answer = true;
+    // for (let i = 0; i <= days.length - 1; i++) {
+    //     if (answer) {
+    //         answer = confirm(`${days[i]}.Хочеш побачити наступний день?`);
+    //     } else {
+    //         break;
+    //     }
+    // }
+
+
     let answer = true;
-    for (let i = 0; i <= days.length - 1; i++) {
-        if (answer) {
-            answer = confirm(`${days[i]}.Хочеш побачити наступний день?`);
-        } else {
-            break;
+    let day = "";
+    let i = 0;
+    while (answer === true) {
+        i++;
+        switch (i) {
+            case 1:
+                day = "Понеділок";
+                break;
+            case 2:
+                day = "Вівторок";
+                break;
+            case 3:
+                day = "Середа";
+                break;
+            case 4:
+                day = "Четвер";
+                break;
+            case 5:
+                day = "П'ятниця";
+                break;
+            case 6:
+                day = "Субота";
+                break;
+            case 7:
+                day = "Неділя";
+                i = 0;
+                break;
         }
+        answer = confirm(`День тижня: ${day}.Хочеш побачити наступний день?`);
     }
 }
 
 function whatNum() {
-
+    let min = 0;
+    let max = 1000;
+    let average = 500;
+    do {
+        answer = prompt(`Ваше число >, < чи = ${average}?`);
+        if (answer === ">") {
+            min = average;
+            average = Math.round((max - min) / 2 + average);
+        }
+        if (answer === "<") {
+            max = average;
+            average = Math.round((max - min) / 2 + min);
+        }
+    } while (answer !== "=") {
+            alert(`Ваше число: ${average}`);
+    }
 }
+
 
 function table() {
     const res = document.getElementById("res-11");
