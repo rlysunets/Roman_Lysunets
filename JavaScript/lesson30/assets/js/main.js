@@ -168,21 +168,29 @@ function task5() {
 }
 // --task 6 --------------------------------------------------------------------------------------
 function square(a, b) {
-    if (b === "") {
-        return a ** 2;
-    } else {
-        return a * b;
+    // if (a === undefined) {
+    //     a = b;
+    // }
+    // if (b === undefined) {
+    //     b = a;
+    // }
+    if (a <= 0 || b <= 0) {
+        alert("Довжина повинна бути додатня!")
     }
+    if (isNaN(a) === true) {
+        a = b;
+    } 
+    if (isNaN(b) === true) {
+        b = a;
+    } 
+    return a * b;    
 }
+console.log(square(4, 5)); 
+console.log(square(4)); 
 
 function task6() {
     let num1 = parseInt(document.getElementById("i-6.1").value);
     let num2 = parseInt(document.getElementById("i-6.2").value);
-
-    if (isNaN(num2)) {
-        // num1 = 1;
-        num2 = 1;
-    }
 
     let result = square(num1, num2);
     showResult(result, "res-6");
