@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson31 Об'єкти</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="display-5">
+            Lesson31 Об'єкти
+        </h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="p-1">
+                    <p class="text-info">
+                        Task 1
+                    </p>
+                    <p>
+                        Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного бака, середня витрата палива на 100 км., водії), і наступні функції для роботи з цим об'єктом:
+                            <p>Вивести на екран інформацією про автомобіль.</p> 
+                            <p>Додавання водія, який має право керувати автомобілем.</p>
+                            <p>Заправка автомобіля.</p>
+                            <p>Підрахунок необхідного часу для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину, а також потрібно перевіряти чи має право водій керувати даним автомобілем (ім'я водія функція приймає другим аргументом). Також потрібно перевірити чи вистачить палива, для здійснення цієї поїздки, якщо палива не вистачить потрібно вивести повідомлення, про це і запропонувати заправити автомобіль.</p>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="card-body col-6">
+                        <table class="table" id="car-info"></table>
+                    </div>
+                    <div class="card-body col-6">
+                        <div class="fs-4 mb-3">Інформація про водіїв</div>
+                        <div class="form">
+                            <input type="text" class="form-control mb-3" placeholder="Введіть ім'я водія" id="inp">
+                            <button type="button" class="btn btn-success mb-3" onclick="car.addAndCheckDrivers()">Додати</button>
+                            <div id="drivers-info"></div>
+                        </div>
+                    </div>  
+                </div>
+            
+                <div class="row">
+                    <div class="fs-4 mb-3">Інформація про поїздку</div>
+                    <div class="form col-6">
+                        <input type="number" class="form-control mb-3" placeholder="Введіть відстань у км" id="inp-1">
+                        <input type="text" class="form-control mb-3" placeholder="Введіть ім'я водія" id="inp-2">
+                        <button type="button" class="btn btn-success mb-3" onclick="car.showTime()">Розрахувати час у дорозі</button>
+                    </div>
+                    <div id="trip-info"></div>
+                </div>
+            </div>  
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="p-1">
+                    <p class="text-info">
+                        Task 2
+                    </p>
+                    <p>
+                        Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:
+                        <p>Для виведення часу на екран.</p>
+                        <p>Зміни часу на передане кількість секунд.</p>
+                        <p>Зміни часу на передане кількість хвилин.</p>
+                        <p>Зміни часу на передане кількість годин.</p>
+                        Врахуйте, що в останніх 3-х функціях, при зміні однієї частини часу, може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд, то повинно вийти «21:00:15», а не «20:30:75». Також потрібно передбачити можливість того що користувач може передати 150 секунд, або 75 хвилин.
+                    </p>
+                </div>
+                <div class="flex-row col-6 d-flex align-items-center">
+                    <button type="button" class="btn btn-info" onclick="time.showTime()">Котра година?</button>
+                    <div class="ms-4" id="showTime"></div>
+                    <div class="ms-4" id="addedTime"></div>
+                </div>
+                    <div class="card-body col-6">
+                        <input type="number" class="form-control mb-3" placeholder="Введіть години" id="hours">
+                        <input type="number" class="form-control mb-3" placeholder="Введіть хвилини" id="minutes">
+                        <input type="number" class="form-control mb-3" placeholder="Введіть секунди" id="inp-2">
+                        <button type="button" class="btn btn-success" onclick="time.newTime()">Виконати</button>
+                        </div>
+                    </div>  
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
