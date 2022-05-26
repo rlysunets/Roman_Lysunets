@@ -141,44 +141,83 @@ car.showCarInfo();
 car.showDrivers();
 
 // --task 2 -------------------------------------------------------------------------------------------------
-
 const time = {
     hours: new Date().getHours(),
     minutes: new Date().getMinutes(),
     seconds: new Date().getSeconds(),
     showTime() {
+        let hours = this.checkAndAddZero(this.hours);
+        let minutes = this.checkAndAddZero(this.minutes);
+        let seconds = this.checkAndAddZero(this.seconds);
         let time = "";
-        time += `
-            ${this.hours} : ${this.minutes} : ${this.seconds}
-        `
+        time = `
+            ${hours} : ${minutes} : ${seconds}
+        `;
         document.getElementById("showTime").innerHTML = time;
     },
+    checkAndAddZero(value) {
+        if (value < 0) {
+            return topPanel.error("Тільки додатні значення!!!!");
+        } 
+        if (value >= 0 && value < 10) {
+            return value = "0" + value;
+        } else {
+            return value += "";
+        }
+    },
     addHours() {
-        const hours = parseInt(document.getElementById("hours").value);
+        const hours = Math.floor(document.getElementById("hours").value);
         let newHours = this.hours + hours;
         if (newHours >= 24) {
-            this.hours = newHours % 24;
+            time.hours = newHours % 24;
         } else {
-            this.hours = newHours;
+            time.hours = newHours;
         }
     },
     addMinutes() {
-        const minutes = parseInt(document.getElementById("minutes").value);
-        let newMinutes = this.minutes + minutes;
-        if (newMinutes >= 59) {
+        const minutes = Math.floor(document.getElementById("minutes").value);
+        let newMinutes = this.minutes + minutes; 
+        if (newMinutes >= 60) {
             this.minutes = newMinutes % 60;
+            this.hours += Math.floor(newMinutes / 60);
         } else {
             this.minutes = newMinutes;
         }
     },
+    addSeconds() {
+        const seconds = Math.floor(document.getElementById("seconds").value);
+        if (seconds < 0) {
+            topPanel.error("Тільки додатні значення!!!!");
+            return false;
+        }
+        let newSeconds = this.seconds + seconds;
+        let newMinutes = this.minutes + Math.floor(newSeconds / 60);
+        if (newSeconds >= 60) {
+            this.seconds = newSeconds % 60;
+            this.minutes += Math.floor(newSeconds / 60);
+            this.hours = (this.hours + Math.floor(newMinutes / 60)) % 24;
+        } else {
+            this.seconds = newSeconds;
+        }
+    },
     newTime() {
+        this.addHours();
+        this.addMinutes();
+        this.addSeconds();
 
-
-
+        let hours = this.checkAndAddZero(this.hours);
+        let minutes = this.checkAndAddZero(this.minutes);
+        let seconds = this.checkAndAddZero(this.seconds);
+    
+        let time = "";
+        time += `
+            ${hours} : ${minutes} : ${seconds}
+        `;
         document.getElementById("addedTime").innerHTML = time;
-
-        this.addHours()
-    }
-
+        document.getElementById("hours").value = "0";
+        document.getElementById("minutes").value = "0";
+        document.getElementById("seconds").value = "0";
+    },
 }
 
+        

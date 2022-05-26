@@ -77,10 +77,16 @@
                     <div class="ms-4" id="addedTime"></div>
                 </div>
                     <div class="card-body col-6">
-                        <input type="number" class="form-control mb-3" placeholder="Введіть години" id="hours">
-                        <input type="number" class="form-control mb-3" placeholder="Введіть хвилини" id="minutes">
-                        <input type="number" class="form-control mb-3" placeholder="Введіть секунди" id="inp-2">
-                        <button type="button" class="btn btn-success" onclick="time.newTime()">Виконати</button>
+                        <label for="hours" class="col-6">Введіть години :
+                            <input type="number" class="form-control mb-3" id="hours" value="0">
+                        </label>  
+                        <label for="minutes" class="col-6">Введіть хвилини :
+                            <input type="number" class="form-control mb-3" id="minutes" value="0">
+                        </label>  
+                        <label for="seconds" class="col-6">Введіть секунди :
+                            <input type="number" class="form-control mb-3" id="seconds" value="0">
+                        </label>    
+                        <button type="button" class="btn btn-success col-6" onclick="time.newTime()">Виконати</button>
                         </div>
                     </div>  
                 </div>
