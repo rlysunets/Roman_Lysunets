@@ -76,19 +76,65 @@
                     <div class="ms-4" id="showTime"></div>
                     <div class="ms-4" id="addedTime"></div>
                 </div>
-                    <div class="card-body col-6">
-                        <label for="hours" class="col-6">Введіть години :
-                            <input type="number" class="form-control mb-3" id="hours" value="0">
-                        </label>  
-                        <label for="minutes" class="col-6">Введіть хвилини :
-                            <input type="number" class="form-control mb-3" id="minutes" value="0">
-                        </label>  
-                        <label for="seconds" class="col-6">Введіть секунди :
-                            <input type="number" class="form-control mb-3" id="seconds" value="0">
-                        </label>    
-                        <button type="button" class="btn btn-success col-6" onclick="time.newTime()">Виконати</button>
-                        </div>
-                    </div>  
+                <div class="card-body col-6">
+                    <label for="hours" class="col-6">Введіть години :
+                        <input type="number" class="form-control mb-3" id="hours" value="0">
+                    </label>  
+                    <label for="minutes" class="col-6">Введіть хвилини :
+                        <input type="number" class="form-control mb-3" id="minutes" value="0">
+                    </label>  
+                    <label for="seconds" class="col-6">Введіть секунди :
+                        <input type="number" class="form-control mb-3" id="seconds" value="0">
+                    </label>    
+                    <button type="button" class="btn btn-success col-6" onclick="time.newTime()">Виконати</button>
+                </div>
+            </div>  
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="p-1">
+                    <p class="text-info">
+                        Task 3
+                    </p>
+                    <p>
+                        Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+                        <p>Складання 2-х об'єктів-дробів.</p> 
+                        <p>Віднімання 2-х об'єктів-дробів.</p>
+                        <p>Множення 2-х об'єктів-дробів.</p>
+                        <p>Ділення 2-х об'єктів-дробів.</p>
+                        <p>Скорочення об'єкта-дробу.</p>
+                        (Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <div class="fs-3">Перший дріб</div>
+                        <input type="number" class="form-control" placeholder="Чисельник" id="ch_1">
+                        <input type="number" class="form-control" placeholder="Знаменник" id="zn_1">
+                    </div>
+                    <div class="col-3">
+                        <div class="fs-3">Другий дріб</div>
+                        <input type="number" class="form-control" placeholder="Чисельник" id="ch_2">
+                        <input type="number" class="form-control" placeholder="Знаменник" id="zn_2">
+                    </div>
+                    <div class="col-3">
+                        <div class="fs-3">Обери дію</div>
+                        <select class="form-select" id="action">
+                            <option value="+">Додати</option>
+                            <option value="-">Відняти</option>
+                            <option value="*">Помножити</option>
+                            <option value="/">Поділити</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <div class="fs-3">Результат</div>
+                        <input type="number" class="form-control" placeholder="Чисельник" id="res_ch">
+                        <input type="number" class="form-control" placeholder="Знаменник" id="res_zn">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-danger col-12" type="button" onclick="fraction.getResult()">Ruuuuuuuuuuuuuuuuun</button>
                 </div>
             </div>  
         </div>

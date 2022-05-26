@@ -75,7 +75,7 @@ const car = {
                 <td><b>Розхід палива :</b></td>
                 <td>${this.averageFuelConsumption}</td>
             </tr>
-        `
+        `;
         document.getElementById("car-info").innerHTML = html;
     },
     addAndCheckDrivers: function () {
@@ -127,9 +127,8 @@ const car = {
                     <li>Час в дорозі ${hours} год ${min} хв</li>
                     <li>Час на відпочинок ${relax} год</li>
                     <li>${fuel ? 'Вам вистарчить пального' : 'Вам потрібно дозаправитися'}</li>
-
                 </ul>    
-            `
+            `;
         }
         document.getElementById("trip-info").innerHTML = html;
         document.getElementById("inp-1").value = "";
@@ -220,4 +219,114 @@ const time = {
     },
 }
 
+// --task 3 -------------------------------------------------------------------------------------------------
+//! fraction - дріб англ
+const fraction = {
+    setValue(key, ch, zn) {
+        this[key] = {
+            ch: ch,
+            zn: zn
+        }
+    },
+    plus() {
+        const result = {
+            ch: this.value1.ch * this.value2.zn + this.value2.ch * this.value1.zn,
+            zn: this.value1.zn * this.value2.zn
+        };
+        return this.short(result);
+    },
+    minus() {
+        const result = {
+            ch: this.value1.ch * this.value2.zn - this.value2.ch * this.value1.zn,
+            zn: this.value1.zn * this.value2.zn
+        }
+        return this.short(result);
+    },
+    multiply() {
+        const result = {
+            ch: this.value1.ch * this.value2.ch,
+            zn: this.value1.zn * this.value2.zn
+        }
+        return this.short(result);
+    },
+    divide() {
+        const result = {
+            ch: this.value1.ch * this.value2.zn,
+            zn: this.value1.zn * this.value2.ch
+        }
+        return this.short(result);
+    },
+    short(rez) {
+        let nzd = 0;
+        for (let i = Math.min(rez.ch, rez.zn); i > 0; i--) {
+            if (rez.ch % i === 0 && rez.zn % i === 0) {
+                nzd = i;
+                break;
+            }
+        }
+        if (nzd !== 0) {
+            return {
+                ch: rez.ch / nzd,
+                zn: rez.zn / nzd
+            }
+        } else {
+            return rez;
+        }
+    },
+    getResult() {
+    const ch_1 = parseInt(document.getElementById("ch_1").value);
+    const zn_1 = parseInt(document.getElementById("zn_1").value);
+    const ch_2 = parseInt(document.getElementById("ch_2").value);
+    const zn_2 = parseInt(document.getElementById("zn_2").value);
         
+    let action = document.getElementById("action").value;
+        if (this.checkAndValid(ch_1, ch_2, zn_1, zn_2) === true) {
+            this.setValue("value1", ch_1, zn_1);
+            this.setValue("value2", ch_2, zn_2);
+            if (action == "+") {
+                const {
+                    ch,
+                    zn
+                } = this.plus();
+                return this.showResult(ch, zn);
+            } else if (action == "-") {
+                const {
+                    ch,
+                    zn
+                } = this.minus();
+                return this.showResult(ch, zn);
+            } else if (action == "*") {
+                const {
+                    ch,
+                    zn
+                } = this.multiply();
+                return this.showResult(ch, zn);
+            } else {
+                const {
+                    ch,
+                    zn
+                } = this.divide();
+                return this.showResult(ch, zn);
+            }
+        }
+    },
+    checkAndValid(val) {
+        if (val === 0) {
+            topPanel.error("Давай без нулів");
+            document.getElementById("res_ch").value = "";
+            document.getElementById("res_zn").value = "";
+            return false;
+        }
+        if (isNaN(val)) {
+            topPanel.error("Заповни всі поля!");
+            document.getElementById("res_ch").value = "";
+            document.getElementById("res_zn").value = "";
+            return false;
+        }
+        return true;
+    },
+    showResult(ch, zn) {
+        document.getElementById("res_ch").value = ch;
+        document.getElementById("res_zn").value = zn;
+    },
+}
