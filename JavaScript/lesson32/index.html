@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <!-- product -->
+              <input
+                type="text"
+                class="form-control"
+                id="product_name"
+                placeholder="Enter product name"
+              />
+            </div>
+            <div class="col-2">
+              <!-- quantity -->
+              <input
+                type="number"
+                class="form-control"
+                id="product_qty"
+                value="1"
+              />
+            </div>
+            <div class="col-2">
+              <!-- price per one -->
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Price per one"
+                id="product_price"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                type="button"
+                class="btn btn-info"
+                onclick="checkAndAddToCart()"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h4>Products in cart</h4>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="cart-tbody"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">SUBTOTAL</td>
+                <td id="cart-total"></td>
+              </tr>
+              <tr>
+                <td colspan="5">Discount</td>
+                <td id="discountValue"></td>
+              </tr>
+              <tr>
+                <td colspan="5">TOTAL</td>
+                <td id="totalWithDisc"></td>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Discount</div>
+        <div class="card-body">
+          <input type="text" class="form-control" id="discountField">
+          <button type="button" class="btn btn-info" onclick="checkAndApplyDiscount()">Apply</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
