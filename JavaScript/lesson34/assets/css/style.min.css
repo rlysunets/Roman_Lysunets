@@ -1,0 +1,1 @@
+.div_text,.text_area{width:400px;min-height:150px;font-size:20px;font-weight:600}.div_text{border:3px solid #000;position:relative}.text_area{border:3px solid red;outline:0}.square{cursor:all-scroll;position:absolute;right:0;bottom:0;z-index:10;width:8px;height:8px;background-color:grey}
