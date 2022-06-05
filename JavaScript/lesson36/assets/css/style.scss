@@ -1,0 +1,246 @@
+@import "reset";
+
+$black: #000000;
+$brown-dark: #35312D;
+$arrow-inactive: #202020;
+$tomato: #C62100;
+$tomato-light: #F16A50;
+$brown-light: #F8F1EA;
+$dot-inactive: rgba(248, 241, 234, 0.7);
+$dark-dot-inactive: #CAC2BA;
+
+// header=============================================================================
+.header {
+    background: $brown-light;
+    height: 80px;
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    justify-content: space-between;
+    &_menu {
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        .header_item {
+            padding: 0 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            &:hover {
+                background-color: $tomato-light;
+                color: #fff;
+            }
+            .header_link {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &_buttons {
+        display: flex;
+        gap: 30px;
+    }
+}
+.burger {
+    display: none;
+}
+
+// main =============================================================================
+
+.promo {
+    // margin-bottom: 120px;
+    &_list {
+        .promo_item{
+            padding: 120px 100px 368px 0;
+            background-color: #000000;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+            display: flex;
+            justify-content: flex-end;
+            .item_wrap {
+                max-width: 400px;
+                display: flex;
+                gap: 50px;
+                flex-direction: column;
+                align-items: center;
+                .item_title {
+                    color: $brown-light;
+                    font-weight: 700;
+                    font-size: 50px;
+                    line-height: 61px;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+                .item_button {
+                    color: #fff;
+                }
+            }
+        }
+        .promo_item_1{
+            background-image: url(../images/picture.jpg);
+        }
+        .promo_item_2{
+            background-image: url(../images/picture2.jpg);
+        }
+        .promo_item_3{
+            background-image: url(../images/picture3.jpg);
+        }
+    }
+}
+// general styles to all buttons in the site ===============================================
+.button {
+    cursor: pointer;
+    border: 2px solid $brown-light;
+    width: 227px;
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 0;
+    &:hover {
+        background-color: $tomato-light;
+        border: 2px solid $tomato-light;
+    }
+}
+
+
+//  custom dots to promo slider =====================================================
+.lSSlideOuter .lSPager.lSpg>li a {
+    background-color: $dot-inactive;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.lSSlideOuter .lSPager.lSpg>li.active a, 
+.lSSlideOuter .lSPager.lSpg>li:hover a  {
+    background-color: $tomato-light;
+}
+.lSSlideOuter {
+    position: relative;
+}
+.lSSlideOuter .lSPager.lSpg {
+    position: absolute;
+    bottom: 50px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.lSSlideOuter .lSPager.lSpg>li {
+    padding: 0 15px;
+}
+// ==========================================================================================
+//  new arrivals section ====================================================================
+
+.new_arrivals {
+    padding: 120px 100px 70px;
+    &_title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+    &_slider {
+        margin-bottom: 50px;
+        position: relative;
+        .new_arrivals_list-prev {
+            cursor: pointer;
+            content: url(../images/arrows/prev.svg);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -50px;
+            &:hover {
+                content: url(../images/arrows/prev_active.svg);
+            }
+        }
+        .new_arrivals_list-next {
+            cursor: pointer;
+            content: url(../images/arrows/next.svg);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -50px;
+            &:hover {
+                content: url(../images/arrows/next_active.svg);
+            }
+        }
+        .new_arrivals_list {
+            display: flex;
+            .new_arrivals_item {
+                display: flex;
+                .item_wrapp {
+                    position: relative;
+                    margin-bottom: 50px;
+                    padding: 20px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid $brown-light;
+                    &_sold {
+                        border: 1px solid $tomato-light;
+                    }
+                    .hint {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        align-self: flex-start;
+                        background-color: $tomato-light;
+                        padding: 4px 6px;
+                        font-size: 10px;
+                        line-height: 12px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: $brown-light;
+                        &_sold {
+                            padding: 4px 15px;
+                            background-color: $brown-light;
+                            color: #000;
+                    }
+                    }
+                    .pic {
+                        margin-bottom: 20px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .descr {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 20px;
+                        text-align: center;
+                        margin-bottom: 10px;
+                        flex: 1 1 auto;
+                    }
+                    .price {
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 29px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    &_button {
+        display: flex;
+        justify-content: center;
+    }
+    .button_black {
+        border: 2px solid #000000;
+        &:hover {
+            background-color: $tomato-light;
+            border: 2px solid $tomato-light;
+            color: #fff;
+        }
+    }
+}
+
+.new_arrivals_slider .lSSlideOuter .lSPager.lSpg>li {
+    display: none;
+}

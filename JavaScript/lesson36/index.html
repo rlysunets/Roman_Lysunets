@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <link rel="stylesheet" href="assets/css/montserrat.min.css">
+    <link rel="stylesheet" href="assets/css/icomoon.min.css">
+    <link rel="stylesheet" href="assets/plagins/lightslider/css/lightslider.min.css">
+    <link rel="stylesheet" href="assets/css/hamburger.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header_logo">
+                <img src="assets/images/logo.svg" alt="logo">
+            </div>
+            <ul class="header_menu">
+                <li class="header_item">
+                    <a href="#" class="header_link">
+                        Home
+                    </a>
+                </li>
+                <li class="header_item">
+                    <a href="#" class="header_link">
+                        Catalog
+                    </a>
+                </li>
+                <li class="header_item">
+                    <a href="#" class="header_link">
+                        News
+                    </a>
+                </li>
+                <li class="header_item">
+                    <a href="#" class="header_link">
+                        Contacts
+                    </a>
+                </li>
+            </ul> 
+
+            <div class="header_buttons">
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36 34.1172L25.944 24.0611C28.3605 21.1601 29.5655 17.439 29.3084 13.6721C29.0513 9.90519 27.3518 6.38241 24.5635 3.83662C21.7751 1.29083 18.1127 -0.0819787 14.338 0.00378988C10.5633 0.0895584 6.96692 1.6273 4.29711 4.29711C1.6273 6.96692 0.0895584 10.5633 0.00378988 14.338C-0.0819787 18.1127 1.29083 21.7751 3.83662 24.5635C6.38241 27.3518 9.90519 29.0513 13.6721 29.3084C17.439 29.5655 21.1601 28.3605 24.0611 25.944L34.1172 36L36 34.1172ZM2.71076 14.6949C2.71076 12.3246 3.41361 10.0076 4.73045 8.03686C6.04728 6.06608 7.91894 4.53004 10.1088 3.62299C12.2986 2.71594 14.7082 2.47862 17.0329 2.94103C19.3576 3.40344 21.4929 4.54482 23.1689 6.22083C24.845 7.89684 25.9863 10.0322 26.4487 12.3569C26.9112 14.6816 26.6738 17.0912 25.7668 19.281C24.8597 21.4708 23.3237 23.3425 21.3529 24.6593C19.3821 25.9762 17.0651 26.679 14.6949 26.679C11.5176 26.6755 8.47142 25.4117 6.22472 23.1651C3.97802 20.9184 2.71428 17.8722 2.71076 14.6949Z" fill="black"/>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 1C9.0586 1 1 9.0586 1 19C1 28.9414 9.0586 37 19 37C28.9414 37 37 28.9414 37 19C37 9.0586 28.9414 1 19 1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 30C5 30 9.03726 24.9286 18.9991 24.9286C28.9609 24.9286 33 30 33 30H5ZM18.9991 18.6917C20.4402 18.6917 21.8223 18.1285 22.8413 17.126C23.8603 16.1234 24.4328 14.7637 24.4328 13.3459C24.4328 11.9281 23.8603 10.5683 22.8413 9.56577C21.8223 8.56322 20.4402 8 18.9991 8C17.558 8 16.1759 8.56322 15.1569 9.56577C14.1378 10.5683 13.5654 11.9281 13.5654 13.3459C13.5654 14.7637 14.1378 16.1234 15.1569 17.126C16.1759 18.1285 17.558 18.6917 18.9991 18.6917V18.6917Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div> 
+
+            <!-- burger -->
+
+            <div class="burger">
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+        </header>
+
+        <main class="main">
+            <section class="promo">
+                <ul class="promo_list" id="promo_lightSlider">
+                    <li class="promo_item promo_item_1">
+                        <div class="item_wrap">
+                            <h2 class="item_title">discover new options</h2>
+                            <button class="item_button button" type="button">View more</button>
+                        </div>
+                    </li>
+                    <li class="promo_item promo_item_2">
+                        <div class="item_wrap">
+                            <h2 class="item_title">expand your horizons</h2>
+                            <button class="item_button button" type="button">View more</button>
+                        </div>
+                    </li>
+                    <li class="promo_item promo_item_3">
+                        <div class="item_wrap">
+                            <h2 class="item_title">Find your own style</h2>
+                            <button class="item_button button" type="button">View more</button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="new_arrivals">
+                <h3 class="new_arrivals_title">new arrivals</h3>
+                <div class="new_arrivals_slider">
+                    <div class="new_arrivals_list-prev"></div>
+                    <div class="new_arrivals_list-next"></div>
+
+                    <ul class="new_arrivals_list" id="new_arrivals_lightSlider">
+                        <li class="new_arrivals_item">
+                            <div class="item_wrapp">
+                                <div class="hint">in stock</div>
+                                <div class="pic">
+                                    <img src="assets/images/guitar1.png" alt="guitar">
+                                </div>
+                                <div class="descr">Hagstrom Alvar Limited Edition</div>
+                                <div class="price">€2.990,00</div>
+                            </div>
+                        </li>
+                        <li class="new_arrivals_item">
+                            <div class="item_wrapp">
+                                <div class="hint">in stock</div>
+                                <div class="pic">
+                                    <img src="assets/images/guitar5.png" alt="guitar">
+                                </div>
+                                <div class="descr">Hagstrom Tremar Viking Deluxe Cloudy Seas</div>
+                                <div class="price">€1.390,00</div>
+                            </div>
+                        </li>
+                        <li class="new_arrivals_item">
+                            <div class="item_wrapp item_wrapp_sold">
+                                <div class="hint hint_sold">sold</div>
+                                <div class="pic">
+                                    <img src="assets/images/guitar3.png" alt="guitar">
+                                </div>
+                                <div class="descr">Gibson Les Paul Standard 60s</div>
+                                <div class="price">€3.749,00</div>
+                            </div>
+                        </li>
+                        <li class="new_arrivals_item">
+                            <div class="item_wrapp">
+                                <div class="hint">in stock</div>
+                                <div class="pic">
+                                    <img src="assets/images/guitar2.png" alt="guitar">
+                                </div>
+                                <div class="descr">Suhr Standard Plus Trans Blue Denim</div>
+                                <div class="price">€3.449,00</div>
+                            </div>
+                        </li>
+                        <li class="new_arrivals_item">
+                            <div class="item_wrapp">
+                                <div class="hint">in stock</div>
+                                <div class="pic">
+                                    <img src="assets/images/guitar4.png" alt="guitar">
+                                </div>
+                                <div class="descr">Fender Telecaster Black Paisley Limited Edition</div>
+                                <div class="price">€1.499,00</div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="new_arrivals_button">
+                    <button type="button" class="button button_black">View more</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plagins/lightslider/js/lightslider.min.js"></script>
+    <script src="assets/js/main.prod.js"></script>
+</body>
+</html>

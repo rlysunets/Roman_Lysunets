@@ -64,9 +64,8 @@ function handler(e) {
 
 
 // !!!! example => виконаеться 1 раз
-// document.body.addEventListener("click", hello);
+// document.body.addEventListener("click", hello, {once: true});
 // function hello() {
 //     console.log("Hello");
-//     document.body.removeEventListener("click", hello);
 // }
 
