@@ -1,0 +1,176 @@
+@import "reset";
+
+.container {
+    background-image: url(../images/bg-image.jpg);
+    background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    background-size: covers;
+    padding-top: 5%;
+}
+
+.tabs {
+    margin: 0 auto;
+    width: 600px;
+    .tabs_switch {
+        padding: 28px 50px;
+        background-color: #2B3040;
+        display: flex;
+        justify-content: space-between;
+        .tab {
+            cursor: pointer;
+            line-height: 28px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            color: #8D91A3;
+            &:hover {
+                color: #fff;
+                svg {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+            }
+            &_active {
+                color: #fff;
+                svg {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+    .tabs_content {
+        background-color: #212534;
+        .tab_block {
+            display: none;
+            &_active {
+                display: block;
+            }
+        }
+    }
+}
+
+.block_wrapper {
+    padding: 60px 40px;
+    display: flex;
+    gap: 40px;
+    .block_poster {
+        margin: 18px 0;
+        .photo {
+            margin-bottom: 10px;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .block_info {
+        flex: 1 1 auto;
+        .block_header {
+            position: relative;
+            display: flex;
+            margin-bottom: 40px;
+            justify-content: space-between;
+            .heading {
+                .title {
+                    font-size: 32px;
+                    line-height: 32px;
+                    margin-bottom: 15px;
+                }
+                .subtitle {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+            .reiting {
+                position: relative;
+                position: absolute;
+                right: 0;
+                top: -12px;
+                .chart {
+                    
+                    .percent {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 20px;
+                        line-height: 22px;
+                        color: #B7BACD;
+                    }
+                }
+            }
+        }
+        .descr {
+            max-width: 277px;
+            font-size: 14px;
+            line-height: 22px;
+            color: #B7BACD;
+            margin-bottom: 50px;
+        }
+        .block_footer {
+            display: flex;
+            justify-content: space-between;
+            .pricing {
+                .discount {
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #FFDD3F;
+                }
+                .price {
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+            }
+            .buy_it {
+                padding-right: 13px;
+                .btn {
+                    align-items: center;
+                    padding: 20px 10px;
+                    width: 155px;
+                    height: 60px;
+                    background: #13E28D;
+                    border: none;
+                    border-radius: 2px;
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+
+// responsive =================================================================
+@media screen and (max-width: 768px) {
+    .tabs {
+        .tabs_switch {
+            padding: 28px 30px;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .tabs {
+        max-width: 400px;
+        .tabs_switch {
+            padding: 28px 10px;
+        }
+    }
+    .block_wrapper {
+        flex-direction: column;
+        .block_poster {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 0;
+    }
+}
