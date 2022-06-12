@@ -1,0 +1,115 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-10">
+        <input type="search" id="search" class="form-control">
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-info" id="search_btn">Search</button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container movie_wrap">
+
+      
+    </div>
+  </div>
+
+<script>
+  // keys
+  // const API_KEY = "294b52ec";
+  // const API_KEY = "cfbae056";
+  const API_KEY = "e6735353";
+
+$(function() {
+  $("#search_btn").on("click", function () {
+    const search = $("#search").val();
+    if(search !==  "") {
+      searchMovies(search).then((respons) => {
+        showMovies(respons.Search)
+      })   
+    } 
+  })
+  $("body").on("click", ".btn-detail", function() {
+    // const id = $(this).data("id")  // string
+    // OR
+    const id = $(this).attr("data-id");
+    getMovie(id).then(resp => {
+      console.log(resp);
+    })
+  })
+});
+
+async function getMovie(id) {
+  return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
+    .then(rest => {
+      return rest.json();
+    })
+    .then(rest => {
+      return rest;
+    })
+  
+}
+
+// $(function() {
+//   $.ajax({
+//     url: "https://www.omdbapi.com",
+//     data: `apikey=${API_KEY}&s=Batman`,
+//     type: "get",
+//     dataType: "json",
+//     success: function(json) {
+//       // console.log(json);
+//       showMovies(json.Search);
+//     }
+//   })
+// });
+
+
+// function searchMovies(search) {
+//   return $.ajax({
+//         url: "https://www.omdbapi.com",
+//         data: `apikey=${API_KEY}&s=${search}`,
+//         type: "get",
+//         dataType: "json",
+//   })
+// }
+
+function searchMovies(search) {
+  return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
+    .then(resp => {
+      return resp.json();
+      
+    })
+    .then(resp => {
+      return resp;
+    })
+}
+
+async function filterMovie(search) {
+  const movie_list = await searchMovies(search);
+  showMovies(movie_list.Search);
+}
+
+// filterMovie();
+
+
+function showMovies(movies) {
+  let html = "";
+  movies.forEach(el => {
+    html += `
+    <div class="card">
+      <img src="${el.Poster}" class="card-img-top" alt="${el.Title}">
+      <div class="card-body">
+        <h5 class="card-title">${el.Title}</h5>
+        <p class="card-text">${el.Year}</p>
+        <button class="btn btn-primary btn-detail" data-id="${el.imdbID}">Detail</button>
+      </div>
+    </div>
+    `;
+  });
+  $(".movie_wrap").html(html);
+}
+
+</script>
