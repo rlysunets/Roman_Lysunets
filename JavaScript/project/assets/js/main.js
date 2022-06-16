@@ -1,5 +1,5 @@
 $(function () {
-//  burger & menu mobile ==============================================================
+//  burger & menu mobile ==================================================
     function toggleMenu() {
         $(".hamburger").toggleClass("is-active");
         $(".menu-mobile").toggleClass("active");
@@ -115,14 +115,12 @@ $(function () {
         L.marker([40.678564816138355, -73.9433614791599], {icon: myIcon}).addTo(map)
     }
 
-
     $("#load_map_link").on("click", function(e) {
         // e.preventDefault();
         e.stopPropagation();
         $("#map").html("");
         initMap();
     })
-
 
     // плавний скрол при кліку на лого  ===========================================
     $("a").on("click", function(e) {
@@ -137,7 +135,7 @@ $(function () {
         }
     })
 
-    // плавний скрол при кліку меню  ===========================================
+    // плавний скрол при кліку на меню  ============================================
     $(".menu_link, .menu-mobile_link").on("click", function(event) {
         event.preventDefault();
         $("html, body").animate({scrollTop:$($(this).attr("href")).offset().top}, 500)
@@ -152,7 +150,7 @@ $(function () {
     })
 })
 
-    //  light gallery ============================================================
+    // light gallery ===============================================================
     // lightGallery(document.getElementById("gallery"));
 
     lightGallery(document.getElementById('lightgallery'), {

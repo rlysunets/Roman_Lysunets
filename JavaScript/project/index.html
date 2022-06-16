@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
     <!-- styles -->
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
 </head>
 
 <body>
@@ -212,14 +214,15 @@
             <div class="container">
                 <div class="what_we_do_wrap">
                     <div class="border"></div>
-                    <div class="what_we_do_title section_title">What we do</div>
+                    <h3 class="what_we_do_title section_title">What we do</h3>
                     <article class="what_we_do_article">
                         <div class="article_photo">
-                            <img src="assets/images/what-we-do/what-we-do2.jpg" alt="building">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" 
+                            data-src="assets/images/what-we-do/what-we-do2.jpg" alt="building">
                         </div>
                         <div class="article_content">
                             <div class="article_content_hint">One world</div>
-                            <div class="article_content_title">Trade Center</div>
+                            <h4 class="article_content_title">Trade Center</h4>
                             <div class="article_content_descr">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</div>
                             <div class="article_content_button">
                                 <button type="button" class="btn">More details</button>
@@ -234,11 +237,12 @@
                     </article>
                     <article class="what_we_do_article article_reversed">
                         <div class="article_photo">
-                            <img src="assets/images/what-we-do/what-we-do.jpg" alt="building">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" 
+                            data-src="assets/images/what-we-do/what-we-do.jpg" alt="building">
                         </div>
                         <div class="article_content">
                             <div class="article_content_hint">International</div>
-                            <div class="article_content_title">Commerce center</div>
+                            <h4 class="article_content_title">Commerce center</h4>
                             <div class="article_content_descr">Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</div>
                             <div class="article_content_button">
                                 <button type="button" class="btn">More details</button>
@@ -256,12 +260,12 @@
         </section>
 
         <!-- section news -->
-        <section class="news" id="news">
+        <section class="news lazy-bg" id="news" data-src="assets/images/news/News.jpg">
             <div class="container">
                 <div class="news_wrap">
                     <div class="news_heading">
                         <div class="border border_white"></div>
-                        <div class="news_title section_title section_title_white">Latest news</div>
+                        <h3 class="news_title section_title section_title_white">Latest news</h3>
                     </div>
                     <div class="arrow arrow_left"></div>
                     <div class="arrow arrow_right"></div>
@@ -276,23 +280,28 @@
                 <div class="gallery_wrap">
                     <div class="gallery_heading">
                         <div class="border"></div>
-                        <div class="gallery_title section_title">gallery</div>
+                        <h3 class="gallery_title section_title">gallery</h3>
                     </div>
                     <div class="gallery_photos" id="lightgallery">
                         <a href="assets/images/gallery/img1.jpg" class="big">
-                            <img src="assets/images/gallery/img1.jpg" />
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                            data-src="assets/images/gallery/img1.jpg" alt="photo"/>
                         </a>
                         <a href="assets/images/gallery/img2.jpg" class="small">
-                            <img src="assets/images/gallery/img2.jpg" />
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                            data-src="assets/images/gallery/img2.jpg" alt="photo" />
                         </a>
                         <a href="assets/images/gallery/img3.jpg" class="small">
-                            <img src="assets/images/gallery/img3.jpg" />
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                            data-src="assets/images/gallery/img3.jpg" alt="photo" />
                         </a>
                         <a href="assets/images/gallery/img4.jpg" class="small">
-                            <img src="assets/images/gallery/img4.jpg" />
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                            data-src="assets/images/gallery/img4.jpg" alt="photo" />
                         </a>
                         <a href="assets/images/gallery/img5.jpg" class="small">
-                            <img src="assets/images/gallery/img5.jpg" />
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                            data-src="assets/images/gallery/img5.jpg" alt="photo" />
                         </a>
                     </div>
                     <div class="gallery_button">
@@ -303,25 +312,27 @@
         </section>
 
         <!-- section map -->
-        <section class="map_section">
+        <div class="map_section">
             <div class="map" id="map">
                 <a href="javascript:void(0)" id="load_map_link">
-                    <img src="assets/images/map/map-screen.png" alt="map screen">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                    data-src="assets/images/map/map-screen.png" alt="map screen">
                 </a>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- footer -->
-    <footer class="footer">
+    <footer class="footer lazy-bg" data-src="assets/images/footer/footer.jpg">
         <div class="container">
+
     <!-- section form -->
-            <section class="form_section" id="contact">
+            <section class="form_section lazy-bg" id="contact" data-src="assets/images/form/form.jpg">
                 <div class="continer">
                     <div class="form_wrap">
                         <div class="form_heading">
                             <div class="border"></div>
-                            <div class="fotm_title section_title">get in touch</div>
+                            <h3 class="fotm_title section_title">get in touch</h3>
                         </div>
                         <div class="form_body">
                             <div class="contacts">
@@ -333,11 +344,10 @@
                                 </div>
                                 <div class="contact">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="16" height="16"><defs><style>.cls-1{fill:#7E5AFF;}</style></defs><title>n</title><path class="cls-1" d="M123.28788,96.79737,100.78819,80.34893a6.26082,6.26082,0,0,0-8.08382.58949l-12.02065,11.805-.04092.04092a5.33619,5.33619,0,0,1-7.50362-.08369L52.35966,71.92108,35.2994,54.86081a5.33619,5.33619,0,0,1-.08369-7.50362l.04092-.04092,11.805-12.02065a6.26082,6.26082,0,0,0,.58949-8.08382L31.20263,4.71212a6.26247,6.26247,0,0,0-9.48412-.73271l-8.47993,8.47993q-.80336.80336-1.5342,1.66808C10.14787,15.9666,6.77822,20.09128,5.49694,22.745a34.59493,34.59493,0,0,0,5.73882,38.17081l55.84846,55.84846a34.59493,34.59493,0,0,0,38.17081,5.73882c2.65369-1.28128,6.77836-4.65093,8.61754-6.20744q.86472-.73083,1.66808-1.5342l8.47993-8.47993A6.26247,6.26247,0,0,0,123.28788,96.79737Z" id="id_102"></path></svg>
-                                    <a href="tel:+001 356-868-2454">+001 356-868-2454</a>
+                                    <a href="tel:+0013568682454">+001 356-868-2454</a>
                                 </div>
                                 <div class="contact">
-                                    <?xml version="1.0" encoding="utf-8"?>
-                                    <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
                                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
                                     <style type="text/css">
                                         .st0{fill:none;stroke:#7E5AFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -349,8 +359,7 @@
                                     <a href="mailto:montichello@service.com">montichello@service.com</a>
                                 </div>
                                 <div class="contact">
-                                    <?xml version="1.0" encoding="utf-8"?>
-                                    <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="16" height="16"
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
                                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
                                     <style type="text/css">
                                         .st0{fill:none;stroke:#7E5AFF;stroke-width:2;stroke-miterlimit:10;}
@@ -432,8 +441,9 @@
     <script src="assets/plugins/light-gallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <!-- leaflet library -->
     <script src="assets/plugins/leaflet/leaflet.js"></script>
+    <!-- lezy load -->
+    <script src="assets/js/lazyLoad.prod.js"></script>
     <!-- main.js -->
-    <!-- <script src="assets/js/main.prod.js"></script> -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.prod.js"></script>
 </body>
 </html>
