@@ -3,10 +3,13 @@
 
 // header styles ============================================================
 header {
+    background-color: rgba(85, 183, 255, .7);
+    box-shadow: 0 0 10px #FFF;
+    backdrop-filter: blur(10px);
     position: fixed;
-    top: 50px;
+    top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 1001;
     width: 100%;
     height: 60px;
 }
@@ -46,8 +49,10 @@ header {
     }
     &_socials{
         display: flex;
-        align-items: center;
+        // align-items: center;
+        // justify-content: center;
         gap: 20px;
+        padding-top: 7px;
     }
 }
 // socials svg ============================================================
@@ -63,29 +68,32 @@ svg {
     display: none;
 }
 .menu-mobile {
-    padding: 50px 0 0 30px;
+    padding-left: 30px;
     position: fixed;
     width: 350px;
-    background-color: #5474fde6;
-    box-shadow: 0 0 5px #FFF;
+    background-color: rgba(85, 183, 255, .9);
+    box-shadow: 0 0 10px #FFF;
     height: 100vh;
     left: 0;
-    top: 60px;
+    top: 0;
     z-index: 100;
     display: block;
     transition: all .3s ease;
     transform: translateX(-110%);
+        &_logo {
+            margin-bottom: 20px;
+        }
         &.active {
            transform: translateX(0);
         }
         &_item {
-              margin-bottom: 20px;
+            margin-bottom: 20px;
         }
         &_link {
             font-weight: 700;
             font-size: 1.6rem;
             line-height: 2.625rem;
-            // color: #828282;
+            color: #fff;
         &:hover {
             color: #090909;
             text-decoration: none;
@@ -98,11 +106,12 @@ svg {
 #overlay {
     display: none;
     position: fixed;
+    z-index: 1100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;   
-    background-color: #000;
+    background-color: #2e2e2e;
     opacity: .5;
     z-index: 8;
     &.open {
@@ -115,7 +124,6 @@ svg {
 // section intro =============================================================
 .intro {
     color: #FFFFFF;
-    margin-bottom: 100px;
     &_list {
         .intro_item {
             background-color: #7E5AFF;
@@ -229,7 +237,7 @@ svg {
 //  what we do section =======================================================
 .what_we_do {
     overflow: hidden;
-    padding-bottom: 140px;
+    padding: 100px 0 140px;
 }
 .what_we_do_wrap {
     display: flex;
@@ -365,8 +373,6 @@ svg {
             margin-bottom: 90px;
         }
         .news_slider {
-            // display: flex;
-            height: 100%;
             position: relative;
             .new_item {
                 display: flex;
@@ -384,7 +390,7 @@ svg {
                     height: 100%;
                     flex-direction: column;
                     padding: 30px 20px 40px;
-                    flex: 1 1 auto;
+                    // flex-basis: 100%;
                     &_title {
                         font-weight: 700;
                         font-size: 22px;
@@ -395,7 +401,7 @@ svg {
                         font-family: 'Open Sans';
                         font-size: 18px;
                         line-height: 25px;
-                        // flex: 1 1 auto;
+                        // flex-basis: 100%;
                     }
                 }
                 .author {
@@ -571,7 +577,7 @@ input {
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: cover;
-        // background-image: url(../images/form/form.jpg);
+        background-image: url(../images/form/form.jpg);
         .form_heading {
             display: flex;
             flex-direction: column;
@@ -653,6 +659,16 @@ input {
             right: -50px;
         }
     }
+    .form_section {
+        position: absolute;
+        left: 50%;
+        top: -20%;
+        z-index: 1000;
+        transform: translateX(-50%);
+    }
+    .footer {
+        padding: 350px 0 180px;
+    }
 }
 @media screen and (max-width: 1100px) {
     .header {
@@ -709,16 +725,6 @@ input {
         &_right {
             display: none;
         }
-    }
-    .form_section {
-        position: absolute;
-        left: 50%;
-        top: -20%;
-        z-index: 1000;
-        transform: translateX(-50%);
-    }
-    .footer {
-        padding: 350px 0 180px;
     }
 }
 @media screen and (max-width: 850px) {

@@ -14,7 +14,7 @@
     <!-- light sider -->
     <link rel="stylesheet" href="assets/plugins/light-slider/css/lightslider.min.css">
     <!-- light gallery -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/css/lightgallery.min.css">
+    <link rel="stylesheet" href="assets/plugins/light-gallery/css/lightgallery-bundle.min.css">
     <!-- leaflet library -->
     <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
     <!-- styles -->
@@ -37,22 +37,22 @@
                 <nav class="header_menu">
                     <ul class="menu_list" itemscope itemtype="http://schema.org/SiteNavigationElement">
                         <li class="menu_item">
-                            <a itemprop="url" href="#" class="menu_link">
+                            <a itemprop="url" href="#gallery" class="menu_link">
                                 <span itemprop="name">About us</span>
                             </a>
                         </li>
                         <li class="menu_item">
-                            <a itemprop="url" href="#" class="menu_link">
+                            <a itemprop="url" href="#what_we_do" class="menu_link">
                                 <span itemprop="name">Projects</span>
                             </a>
                         </li>
                         <li class="menu_item">
-                            <a itemprop="url" href="#" class="menu_link">
+                            <a itemprop="url" href="#news" class="menu_link">
                                 <span itemprop="name">News</span>
                             </a>
                         </li>
                         <li class="menu_item">
-                            <a itemprop="url" href="#" class="menu_link">
+                            <a itemprop="url" href="#contact" class="menu_link">
                                 <span itemprop="name">Contact</span>
                             </a>
                         </li>
@@ -96,24 +96,29 @@
 
                 <!-- mobile menu -->
                 <nav class="menu-mobile">
+                    <div class="menu-mobile_logo">
+                        <a href="#">
+                            <img src="assets/images/logo.svg" alt="Monticello logo">
+                        </a>
+                    </div>
                     <ul class="menu-mobile_list">
                         <li class="menu-mobile_item">
-                            <a href="#" class="menu-mobile_link">
+                            <a href="#gallery" class="menu-mobile_link">
                                 About us
                             </a>
                         </li>
                         <li class="menu-mobile_item">
-                            <a href="#" class="menu-mobile_link">
+                            <a href="#what_we_do" class="menu-mobile_link">
                                 Projects
                             </a>
                         </li>
                         <li class="menu-mobile_item">
-                            <a href="#" class="menu-mobile_link">
+                            <a href="#news" class="menu-mobile_link">
                                 News
                             </a>
                         </li>
                         <li class="menu-mobile_item">
-                            <a href="#" class="menu-mobile_link">
+                            <a href="#contact" class="menu-mobile_link">
                                 Contact
                             </a>
                         </li>
@@ -159,7 +164,7 @@
                         <div class="item_wrap">
                             <h2 class="item_title">SIMPLE & MODERN</h2>
                             <h3 class="item_subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
-                            <div class="arrow"></div>
+                            <div class="arrow scroll"></div>
                         </div>
                     </div>
                 </li>
@@ -168,7 +173,7 @@
                         <div class="item_wrap">
                             <h2 class="item_title">SIMPLE & MODERN</h2>
                             <h3 class="item_subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
-                            <div class="arrow"></div>
+                            <div class="arrow scroll"></div>
                         </div>
                     </div>
                 </li>
@@ -177,7 +182,7 @@
                         <div class="item_wrap">
                             <h2 class="item_title">SIMPLE & MODERN</h2>
                             <h3 class="item_subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
-                            <div class="arrow"></div>
+                            <div class="arrow scroll"></div>
                         </div>
                     </div>
                 </li>
@@ -186,7 +191,7 @@
                         <div class="item_wrap">
                             <h2 class="item_title">SIMPLE & MODERN</h2>
                             <h3 class="item_subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
-                            <div class="arrow"></div>
+                            <div class="arrow scroll"></div>
                         </div>
                     </div>
                 </li>
@@ -195,7 +200,7 @@
                         <div class="item_wrap">
                             <h2 class="item_title">SIMPLE & MODERN</h2>
                             <h3 class="item_subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h3>
-                            <div class="arrow"></div>
+                            <div class="arrow scroll"></div>
                         </div>
                     </div>
                 </li>
@@ -203,7 +208,7 @@
         </section>
 
         <!-- section what we do -->
-        <section class="what_we_do">
+        <section class="what_we_do" id="what_we_do">
             <div class="container">
                 <div class="what_we_do_wrap">
                     <div class="border"></div>
@@ -251,7 +256,7 @@
         </section>
 
         <!-- section news -->
-        <section class="news">
+        <section class="news" id="news">
             <div class="container">
                 <div class="news_wrap">
                     <div class="news_heading">
@@ -260,22 +265,20 @@
                     </div>
                     <div class="arrow arrow_left"></div>
                     <div class="arrow arrow_right"></div>
-                    <ul class="news_slider" id="news_slider">
-
-                    </ul>
+                    <ul class="news_slider" id="news_slider"></ul>
                 </div>
             </div>
         </section>
 
         <!-- section gallery -->
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <div class="gallery_wrap">
                     <div class="gallery_heading">
                         <div class="border"></div>
                         <div class="gallery_title section_title">gallery</div>
                     </div>
-                    <div class="gallery_photos" id="gallery">
+                    <div class="gallery_photos" id="lightgallery">
                         <a href="assets/images/gallery/img1.jpg" class="big">
                             <img src="assets/images/gallery/img1.jpg" />
                         </a>
@@ -307,14 +310,13 @@
                 </a>
             </div>
         </section>
-
-
     </main>
 
+    <!-- footer -->
     <footer class="footer">
         <div class="container">
     <!-- section form -->
-            <section class="form_section">
+            <section class="form_section" id="contact">
                 <div class="continer">
                     <div class="form_wrap">
                         <div class="form_heading">
@@ -425,8 +427,9 @@
     <!-- light slider -->
     <script src="assets/plugins/light-slider/js/lightslider.min.js"></script>
     <!-- light gallery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/1.3.0/lg-zoom.min.js"></script> -->
+    <script src="assets/plugins/light-gallery/lightgallery.min.js"></script>
+    <script src="assets/plugins/light-gallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="assets/plugins/light-gallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <!-- leaflet library -->
     <script src="assets/plugins/leaflet/leaflet.js"></script>
     <!-- main.js -->

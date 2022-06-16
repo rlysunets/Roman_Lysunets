@@ -1,5 +1,5 @@
 $(function () {
-//  burger ==============================================================
+//  burger & menu mobile ==============================================================
     function toggleMenu() {
         $(".hamburger").toggleClass("is-active");
         $(".menu-mobile").toggleClass("active");
@@ -73,7 +73,7 @@ $(function () {
             speed: 1500,
             pause: 3000,
             auto: true,
-            adaptiveHeight: true,
+            // adaptiveHeight: true,
             controls: false,
             responsive : [
                 {
@@ -97,9 +97,6 @@ $(function () {
         $(".arrow_left").on("click", () => newsSlider.goToNextSlide());
         $(".arrow_right").on("click", () => newsSlider.goToPrevSlide());
     }
-
-    //  light gallery ============================================================
-    lightGallery(document.getElementById("gallery"));
 
     // leaflet library ===========================================================
     function initMap() {
@@ -125,7 +122,43 @@ $(function () {
         $("#map").html("");
         initMap();
     })
+
+
+    // плавний скрол при кліку на лого  ===========================================
+    $("a").on("click", function(e) {
+        e.preventDefault();
+
+        if($(this).attr("href") === "#") {
+            $("html, body").animate({ scrollTop: 0 }, 500);
+            $(".hamburger").removeClass("is-active");
+            $(".menu-mobile").removeClass("active");
+            $("#overlay").removeClass("open");
+            $("body").removeClass("hidden");
+        }
+    })
+
+    // плавний скрол при кліку меню  ===========================================
+    $(".menu_link, .menu-mobile_link").on("click", function(event) {
+        event.preventDefault();
+        $("html, body").animate({scrollTop:$($(this).attr("href")).offset().top}, 500)
+    })
+
+    // плавний скрол при кліку на scroll  ===========================================
+    $(".scroll").on("click", function(e) {
+        e.preventDefault();
+
+        const height = $(".intro").height();
+        $("html, body").animate({scrollTop:height}, 500)
+    })
 })
+
+    //  light gallery ============================================================
+    // lightGallery(document.getElementById("gallery"));
+
+    lightGallery(document.getElementById('lightgallery'), {
+        plugins: [lgZoom, lgThumbnail],
+        speed: 500,
+    });
 
 
     
