@@ -1,6 +1,5 @@
 @import "_reset";
 
-
 // header styles ============================================================
 header {
     background-color: rgba(85, 183, 255, .7);
@@ -158,6 +157,7 @@ svg {
     flex-direction: column;
     align-items: center;
     .item_title {
+        text-transform: uppercase;
         margin-bottom: 20px;
         font-weight: 700;
         font-size: 80px;
@@ -166,6 +166,7 @@ svg {
         text-align: center;
     }
     .item_subtitle {
+        text-transform: uppercase;
         text-align: center;
         margin-bottom: 240px;
         font-size: 18px;
