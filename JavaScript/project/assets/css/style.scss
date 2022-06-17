@@ -5,7 +5,8 @@
 header {
     background-color: rgba(85, 183, 255, .7);
     box-shadow: 0 0 10px #FFF;
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,9 +18,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &_logo {
-
-    }
     &_menu {
         .menu_list {
             display: flex;
@@ -53,6 +51,7 @@ header {
         padding-top: 7px;
     }
 }
+
 // svg styles ============================================================
 svg {
     &:hover {
@@ -60,6 +59,7 @@ svg {
         border-radius: 50%;
     }
 }
+
 // burger & mobile menu styles =============================================
 .burger,
 .menu-mobile {
@@ -74,12 +74,16 @@ svg {
     height: 100vh;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 112;
     display: block;
     transition: all .3s ease;
     transform: translateX(-110%);
-        &_logo {
+        &_heading {
+            display: flex;
+            justify-content: space-between;
+            .menu-mobile_logo {
             margin-bottom: 20px;
+        }
         }
         &.active {
            transform: translateX(0);
@@ -104,18 +108,20 @@ svg {
 #overlay {
     display: none;
     position: fixed;
-    z-index: 1100;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;   
     background-color: #2e2e2e;
     opacity: .5;
-    z-index: 8;
     &.open {
        display: block;
        overflow: hidden;
     }
+}
+.none {
+    display: none;
 }
 
 // main styles ===============================================================
@@ -167,6 +173,7 @@ svg {
         letter-spacing: 0.3em;
     }
 }
+
 // custom arrow ================================================================
 .arrow {
     cursor: pointer;
@@ -205,6 +212,7 @@ svg {
         top: 54%;
     }
 }
+
 // intro light slider (custom dots) ================================================================
 .intro {
     position: relative;
@@ -382,7 +390,8 @@ svg {
                     img {
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+                        -o-object-fit: cover;
+                           object-fit: cover;
                     }
                 } 
                 .content {
@@ -414,7 +423,8 @@ svg {
                         img {
                             width: 100%;
                             height: 100%;
-                            object-fit: cover;
+                            -o-object-fit: cover;
+                               object-fit: cover;
                         }
                     }
                     &_info {
@@ -503,7 +513,8 @@ svg {
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+                    -o-object-fit: cover;
+                       object-fit: cover;
                 }
             }
         }
@@ -544,7 +555,8 @@ svg {
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                -o-object-fit: cover;
+                   object-fit: cover;
             }
         }
     }
@@ -567,8 +579,8 @@ input {
 .form_section {
         position: absolute;
         left: 50%;
-        top: -50%;
-        z-index: 1000;
+        top: -40%;
+        z-index: 1;
         transform: translateX(-50%);
     .form_wrap {
         margin: 0 auto;
@@ -608,6 +620,7 @@ input {
         }
     }   
 }
+
 // footer ===================================================================
 .footer {
     position: relative;

@@ -2,14 +2,21 @@ $(function () {
 //  burger & menu mobile ==================================================
     function toggleMenu() {
         $(".hamburger").toggleClass("is-active");
+        $(".hamburger").removeClass("none");
         $(".menu-mobile").toggleClass("active");
+        $(".menu-mobile_logo a").toggleClass("active");
         $("#overlay").toggleClass("open");
         $("body").toggleClass("hidden");
     } 
-
-    $(".hamburger, .menu-mobile_link, #overlay").on("click", function() {
+    
+    $(".hamburger, .menu-mobile_logo a, .menu-mobile_link, #overlay").on("click", function () {
         toggleMenu();
     })
+
+    $(".hamburger").on("click", function() {
+        $(this).addClass("none");
+    })
+
 
 // light slider to intro section ========================================== 
     $("#intro_lightSlider").lightSlider({
@@ -73,7 +80,7 @@ $(function () {
             speed: 1500,
             pause: 3000,
             auto: true,
-            // adaptiveHeight: true,
+            adaptiveHeight: true,
             controls: false,
             responsive : [
                 {
@@ -115,7 +122,7 @@ $(function () {
         L.marker([40.678564816138355, -73.9433614791599], {icon: myIcon}).addTo(map)
     }
 
-    $("#load_map_link").on("click", function(e) {
+    $("#load_map_link, .address").on("click", function(e) {
         // e.preventDefault();
         e.stopPropagation();
         $("#map").html("");
@@ -123,9 +130,7 @@ $(function () {
     })
 
     // плавний скрол при кліку на лого  ===========================================
-    $("a").on("click", function(e) {
-        e.preventDefault();
-
+    $("a").on("click", function() {
         if($(this).attr("href") === "#") {
             $("html, body").animate({ scrollTop: 0 }, 500);
             $(".hamburger").removeClass("is-active");
