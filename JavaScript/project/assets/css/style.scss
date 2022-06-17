@@ -73,7 +73,7 @@ svg {
     height: 100vh;
     left: 0;
     top: 0;
-    z-index: 112;
+    z-index: 1001;
     display: block;
     transition: all .3s ease;
     transform: translateX(-110%);
@@ -107,7 +107,7 @@ svg {
 #overlay {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
@@ -573,7 +573,10 @@ input {
     font-family: 'Montserrat';
     font-size: 18px;
     line-height: 27px;
-    color: #000000
+    color: #000000;
+    &:focus {
+        border-bottom: 2px solid #000;
+    } 
 }
 
 // form section =============================================================
@@ -581,7 +584,7 @@ input {
         position: absolute;
         left: 50%;
         top: -40%;
-        z-index: 1;
+        z-index: 1000;
         transform: translateX(-50%);
     .form_wrap {
         margin: 0 auto;
@@ -606,6 +609,19 @@ input {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                .contact {
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    span {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
             }
             .submit {
                 flex-basis: 50%;

@@ -28,7 +28,13 @@
     <meta property="og:title" content="Monticello" />
     <meta property="og:description" content="We make the world beautiful everyday" />
     <meta property="og:url" content="https://rlysunets.github.io/Roman_Lysunets/JavaScript/project/index.html" />
-    <meta property="og:image" content="https://rlysunets.github.io/Roman_Lysunets/JavaScript/project/images/gallery/img4.jpg" />
+    <meta property="og:image" 
+    content="https://rlysunets.github.io/Roman_Lysunets/JavaScript/project/assets/images/gallery/img4.jpg" />
+    <!-- Open Graph twitter  -->
+    <meta name="twitter:title" content="Monticello - Simple & Modern">
+    <meta name="twitter:description" content="We make the world beautiful everyday">
+    <meta name="twitter:image"
+        content="https://rlysunets.github.io/Roman_Lysunets/JavaScript/project/assets/images/gallery/img4.jpg">
 
     <!-- fonts -->
     <link rel="stylesheet" href="assets/css/montserrat.min.css">
@@ -318,19 +324,19 @@
                     </div>
                     <div class="gallery_photos" id="lightgallery">
                         <a href="assets/images/gallery/img1.jpg" class="big">
-                            <img src="assets/images/gallery/img1.jpg"/>
+                            <img src="assets/images/gallery/img1.jpg" alt="Trade Center in Amsterdam"/>
                         </a>
-                        <a href="assets/images/gallery/img2.jpg" class="small">
-                            <img src="assets/images/gallery/img2.jpg" alt="photo"/>
+                        <a href="assets/images/gallery/img2.jpg">
+                            <img src="assets/images/gallery/img2.jpg" alt="Trade Center in Milan"/>
                         </a>
-                        <a href="assets/images/gallery/img3.jpg" class="small">
-                            <img src="assets/images/gallery/img3.jpg" alt="photo" />
+                        <a href="assets/images/gallery/img3.jpg">
+                            <img src="assets/images/gallery/img3.jpg" alt="Trade Center in Brazilia" />
                         </a>
-                        <a href="assets/images/gallery/img4.jpg" class="small">
-                            <img src="assets/images/gallery/img4.jpg" alt="photo" />
+                        <a href="assets/images/gallery/img4.jpg">
+                            <img src="assets/images/gallery/img4.jpg" alt="Trade Center in Toronto" />
                         </a>
-                        <a href="assets/images/gallery/img5.jpg" class="small">
-                            <img src="assets/images/gallery/img5.jpg" alt="photo" />
+                        <a href="assets/images/gallery/img5.jpg">
+                            <img src="assets/images/gallery/img5.jpg" alt="Trade Center in New York" />
                         </a>
                     </div>
                     <div class="gallery_button">
@@ -365,15 +371,19 @@
                         </div>
                         <div class="form_body">
                             <div class="contacts">
-                                <div class="contact">
+                                <div class="contact" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                                     <svg width="16" height="16" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6.42857 4.5C6.42857 5.68025 5.46596 6.64286 4.28571 6.64286C3.10547 6.64286 2.14286 5.68025 2.14286 4.5C2.14286 3.31975 3.10547 2.35714 4.28571 2.35714C5.46596 2.35714 6.42857 3.31975 6.42857 4.5ZM8.57143 4.5C8.57143 2.13114 6.65458 0.214285 4.28571 0.214285C1.91685 0.214285 0 2.13114 0 4.5C0 5.0106 0.0585938 5.53795 0.276228 5.99833L3.33147 12.4771C3.49888 12.8454 3.88393 13.0714 4.28571 13.0714C4.6875 13.0714 5.07254 12.8454 5.24833 12.4771L8.2952 5.99833C8.51284 5.53795 8.57143 5.0106 8.57143 4.5Z" fill="#7E5AFF"/>
                                     </svg>
-                                    <a href="#map" class="address">91 Nolan Extensions Suite 670</a>
+                                    <a href="#map" class="address">
+                                        <span itemprop="addressLocality">91 Nolan Extensions Suite 670</span>
+                                    </a>
                                 </div>
                                 <div class="contact">
                                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="16" height="16"><defs><style>.cls-1{fill:#7E5AFF;}</style></defs><title>n</title><path class="cls-1" d="M123.28788,96.79737,100.78819,80.34893a6.26082,6.26082,0,0,0-8.08382.58949l-12.02065,11.805-.04092.04092a5.33619,5.33619,0,0,1-7.50362-.08369L52.35966,71.92108,35.2994,54.86081a5.33619,5.33619,0,0,1-.08369-7.50362l.04092-.04092,11.805-12.02065a6.26082,6.26082,0,0,0,.58949-8.08382L31.20263,4.71212a6.26247,6.26247,0,0,0-9.48412-.73271l-8.47993,8.47993q-.80336.80336-1.5342,1.66808C10.14787,15.9666,6.77822,20.09128,5.49694,22.745a34.59493,34.59493,0,0,0,5.73882,38.17081l55.84846,55.84846a34.59493,34.59493,0,0,0,38.17081,5.73882c2.65369-1.28128,6.77836-4.65093,8.61754-6.20744q.86472-.73083,1.66808-1.5342l8.47993-8.47993A6.26247,6.26247,0,0,0,123.28788,96.79737Z" id="id_102"></path></svg>
-                                    <a href="tel:+0013568682454">+001 356-868-2454</a>
+                                    <a href="tel:+0013568682454">
+                                        <span itemprop="telephone">+001 356-868-2454</span>
+                                    </a>
                                 </div>
                                 <div class="contact">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
@@ -385,7 +395,9 @@
                                     <polyline class="st0" points="3,10 16,18 29,10 "/>
                                     <path class="st0" d="M29,10v13c0,2.2-1.8,4-4,4H7c-2.2,0-4-1.8-4-4V10l13-9L29,10z"/>
                                     </svg>
-                                    <a href="mailto:montichello@service.com">montichello@service.com</a>
+                                    <a href="mailto:montichello@service.com" >
+                                        <span itemprop="email">montichello@service.com</span>
+                                    </a>
                                 </div>
                                 <div class="contact">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
@@ -400,7 +412,7 @@
                                     <circle class="st0" cx="16" cy="16" r="13"/>
                                     <polyline class="st1" points="16,6 16,16 21,11 "/>
                                     </svg>
-                                    From 07:05AM to 19:30PM
+                                    <span itemprop="openingHours">From 07:05AM to 19:30PM</span>
                                 </div>
                             </div>
                             <div class="submit">
