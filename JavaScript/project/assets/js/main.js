@@ -101,8 +101,8 @@ $(function () {
         ]
         });
     
-        $(".arrow_left").on("click", () => newsSlider.goToNextSlide());
-        $(".arrow_right").on("click", () => newsSlider.goToPrevSlide());
+        $(".arrow_left").on("click", () => newsSlider.goToPrevSlide());
+        $(".arrow_right").on("click", () => newsSlider.goToNextSlide());
     }
 
     // leaflet library ===========================================================
@@ -151,8 +151,23 @@ $(function () {
         e.preventDefault();
 
         const height = $(".intro").height();
-        $("html, body").animate({scrollTop:height}, 500)
+        $("html, body").animate({ scrollTop: height }, 500);
     })
+    // додаєм тло хедеру після першої секції
+
+    // перевірка при перезавантаженні сторінки
+    if (($(window).scrollTop() + $("header").height()) > $(".intro").height()) {
+        $("header").addClass("header-bg");
+    }
+
+    $(window).on("scroll", function () {
+        if (($(window).scrollTop() + $("header").height()) > $(".intro").height()) {
+            $("header").addClass("header-bg");
+        } else {
+            $("header").removeClass("header-bg");
+        }
+    })
+
 })
 
     // light gallery ===============================================================

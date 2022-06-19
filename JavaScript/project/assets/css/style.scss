@@ -2,17 +2,21 @@
 
 // header styles ============================================================
 header {
-    background-color: rgba(85, 183, 255, .7);
-    box-shadow: 0 0 10px #FFF;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1001;
     width: 100%;
-    height: 60px;
+    padding-top: 50px;
 }
+    .header-bg {
+        background-color: rgba(85, 183, 255, .7);
+        padding-top: 0;
+        height: 60px;
+        box-shadow: 0 0 10px #FFF;
+        -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+    }
 .header {
     display: flex;
     align-items: center;
@@ -70,6 +74,8 @@ svg {
     width: 350px;
     background-color: rgba(85, 183, 255, .9);
     box-shadow: 0 0 10px #FFF;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     height: 100vh;
     left: 0;
     top: 0;
@@ -583,7 +589,7 @@ input {
 .form_section {
         position: absolute;
         left: 50%;
-        top: -40%;
+        top: -43%;
         z-index: 1000;
         transform: translateX(-50%);
     .form_wrap {
@@ -615,11 +621,6 @@ input {
                             text-decoration: underline;
                         }
                     }
-                    span {
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
                 }
 
             }
@@ -641,7 +642,7 @@ input {
 // footer ===================================================================
 .footer {
     position: relative;
-    padding: 207px 0 233px;
+    padding: 237px 0 233px;
     background-color: #7E5AFF;
     background-repeat: no-repeat;
     background-position: 50% 50%;
