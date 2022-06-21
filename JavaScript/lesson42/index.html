@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="display-5">
+            Lesson42 Classes
+        </h2>
+
+        <div class="card mb-4">
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 1
+                    </p>
+                    <p>
+                        Реалізуй клас, що описує коло. У класі повинні бути такі компоненти:
+                        <ul>
+                            <li>поле, що зберігає радіус кола;</li>
+                            <li>get-властивість, яке повертає радіус кола;</li>
+                            <li>set-властивість, що встановлює радіус кола;</li>
+                            <li>get-властивість, яке повертає діаметр кола;</li>
+                            <li>метод, що обчислює площу кола;</li>
+                            <li>метод, що обчислює довжину кола.</li>
+                            <li>Продемонструй роботу властивостей і методів.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="number" class="form-control mb-2" id="i-1" placeholder="Введіть радіус">
+                        <button class="btn btn-danger mb-5 btn-1" type="button">Підтвердіть</button>
+                        <button class="btn btn-primary mb-3 btn-2" type="button">Обчислити площу</button>
+                        <button class="btn btn-primary btn-3" type="button">Обчислити довжину</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-1"></span> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 2
+                    </p>
+                    <p>
+                        Реалізуй клас, що описує канцелярський маркер. У класі повинні бути такі компоненти:
+                        <ul>
+                            <li>поле, яке зберігає колір маркера;</li>
+                            <li>поле, яке зберігає кількість чорнил у маркері (у відсотках);/li>
+                            <li>метод для вводу (приймає рядок і виводить текст відповідним кольором; 
+                                текст виводиться до тих пір, поки в маркері є чорнило; 
+                                один не пробільний символ — це 0,5% чорнил у маркері).</li>
+                            <li>Реалізуй клас, що описує маркер, який можна перезаправляти. 
+                                Успадкуй цей клас від простого маркера і додай метод для заправки.</li>
+                        </ul>
+                        Продемонструй роботу написаних методів.
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <input type="text" class="form-control mb-2" id="i-2" placeholder="Введіть колір маркера">
+                        <input type="number" class="form-control mb-2" id="i-3" placeholder="Введіть кількість чорнил у маркері">
+                        <input type="text" class="form-control mb-2" id="i-4" placeholder="Введіть текст">
+                        <button class="btn btn-danger mb-5 btn-4" type="button">Надрукувати текст</button>
+                        <button class="btn btn-info btn-5" type="button">Заправити катрідж?</button>
+                        
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <span id="res-2"></span> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body d-flex">
+                <div class="col-4 p-1">
+                    <p class="text-info">
+                        Task 3
+                    </p>
+                    <p>
+                        Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.
+                        Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку. Масив працівників необхідно передавати через конструктор, а отримувати HTML-код за допомогою методу getHtml ().
+                        Створи об'єкт класу EmpTable і виведи на екран результат роботи методу getHtml ().
+                    </p>
+                </div>
+                <div class="col-4 p-1">
+                    <div class="d-flex flex-column pt-3">
+                        <button class="btn btn-info btn-6" type="button">Показати таблицю</button>
+                    </div>
+                </div>
+                <div class="col-4 p-1 pt-3">
+                    <div>Результат:
+                        <table>
+                            <thead style="border:1px solid black">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody id="res-3" style="border:1px solid grey"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <script src="assets/js/class.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
