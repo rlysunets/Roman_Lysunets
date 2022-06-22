@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: admin/
+Disallow: backup/
+Disallow: func/
+Disallow: hubridauth/
+Disallow: tmpl/
+Disallow: vendor/
+Sitemap: https://rlysunets.github.io/Roman_Lysunets/lesson22/sitemap.xml
+Host: rlysunets.github.io/Roman_Lysunets/lesson22/index.html
