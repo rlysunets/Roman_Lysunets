@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue</title>
+    <style>
+      .even {
+        color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ text }}</p>
+      <p>Counter: <span v-bind:class="{'even': isEven}">{{ counter }}</span></p>
+      <button type="button" v-on:click="decCounter">-</button>
+      <button type="button" @click="incCounter">+</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            text: "Hello Vue!",
+            counter: 0,
+            // isEven: true,
+          };
+        },
+        // watch передаєм то за чим слідкуєм. Н-д: значення counter
+        // watch: {
+        //   counter(value) {
+        //     if (value % 2 === 0) {
+        //       this.isEven = true;
+        //     } else {
+        //       this.isEven = false;
+        //     }
+        //     // OR
+        //     // this.isEven = value % 2 === 0
+        //   },
+        // },
+        // computed властивості це властивості які розраховуються. Всі методи які описані у computed
+        // обовязково повинні повертати значення. А назва методу доступна як змінна
+        // В такому випадку watch і змінна isEven у data не потрібні!!!!
+        computed: {
+          isEven() {
+            return this.counter % 2 === 0;
+          },
+        },
+        // created - виконує щось 1 раз при завантаженні
+        created() {
+          this.incCounter();
+        },
+        methods: {
+          incCounter() {
+            this.counter++;
+          },
+          decCounter() {
+            this.counter--;
+          },
+        },
+      };
+
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
