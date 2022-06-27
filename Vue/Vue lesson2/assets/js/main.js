@@ -7,12 +7,18 @@ const App = {
             movieInfo: {},
             favourite: [],
             showModal: false,
+            storage: {}
 
         }
     },
     created() {
+        // console.log(this.storage);
         const local = localStorage.getItem("user_favourites")
-        this.favourite = JSON.parse(local)
+        this.storage = JSON.parse(local)
+        // console.log(this.storage);
+        // console.log(this.favourite);
+
+
     },
     methods: {
         searchMovie() {
@@ -42,10 +48,11 @@ const App = {
             if (this.favourite.find((el) => el.imdbID === id) === undefined) {
 
                 this.favourite.push(this.movieList[index]);
-
+                localStorage.setItem("user_favourites", JSON.stringify(this.favourite))
                 // console.log(this.movieList[index]);
+                console.log(this.favourite);
             }
-            localStorage.setItem("user_favourites", JSON.stringify(this.favourite))
+            
         },
         showErr(err) {
             let html = ""
@@ -57,12 +64,10 @@ const App = {
                     </div>
                 `
             document.body.insertAdjacentHTML("afterbegin", html)
-            // showModal = true
 
             setTimeout(() => {
                 let el = document.querySelector(".modal_overlay")
                 el.classList.add("none")
-                // showModal = false
 
             },3000)
         },
