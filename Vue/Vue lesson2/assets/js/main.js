@@ -2,14 +2,14 @@ const App = {
     data() {
         return {
             API_KEY: "e6735353",
-            search: "batman",
-            selected: "",
+            search: "",
+            selected: ["Movie", "Series"],
+            select: "",
             movieList: [],
             movieInfo: {},
             favourite: [],
             showModal: false,
             storage: {}
-
         }
     },
     created() {
@@ -25,12 +25,17 @@ const App = {
     methods: {
         searchMovie() {
             if (this.search !== "") {
-                axios.get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}`)
+                axios
+                .get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.select}`)
                 .then(response => {
                     this.movieList = response.data.Search
                     this.search = ""
                 })
-                .catch(error => this.showErr(error))
+                .catch(error => {
+                    this.showErr(error.code)
+                })
+            } else {
+                this.showErr("Enter movie title.")
             }
         },
         showMovieInfo() {
@@ -42,7 +47,9 @@ const App = {
                 this.movieInfo = response.data
                 this.showMovieInfo()
             })
-            .catch(error => this.showErr(error))
+            .catch(error => {
+                this.showErr(error.code)
+            })
         },
         addToFavourites(id) {
             const index = this.movieList.findIndex((el) => el.imdbID === id)
@@ -53,12 +60,12 @@ const App = {
                 localStorage.setItem("user_favourites", JSON.stringify(this.favourite))
             }
         },
-        showErr(err) {
+        showErr(text) {
             let html = ""
                 html += `
                     <div class="modal_overlay">
-                        <div class="my_modal text-bg-secondary">
-                            ${err.code}. Try again later.
+                        <div class="my_modal text-bg-warning text-center fs-2">
+                            ${text}
                         </div>
                     </div>
                 `
@@ -68,7 +75,7 @@ const App = {
                 let el = document.querySelector(".modal_overlay")
                 el.classList.add("none")
 
-            },3000)
+            },2000)
         },
     }
 }

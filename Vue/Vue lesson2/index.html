@@ -11,8 +11,8 @@
 </head>
 <body class="bg-secondary">
     <div id="app">
-        <div class="container pt-4">
-            <h2 class="display-4 text-uppercase text-white fw-bold ">movie search service</h2>
+        <div class="container pt-5">
+            <h2 class="display-4 text-uppercase text-white text-center fw-bold mb-5">movie search service</h2>
             <div class="card text-bg-dark mb-4">
                 <div class="card-body">
                     <form action="" id="search_form" @submit.prevent="searchMovie">
@@ -21,27 +21,30 @@
                                 <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
                             </div>
                             <div class="col-2">
-                                <select class="form-select" v-model="selected">
-                                    <option value="Film">Film</option>
-                                    <option value="Serial">Serial</option>
+                                <select class="form-select" v-model="select">
+                                    <!-- <option v-for="select in selected">{{ select }}</option> -->
+                                    <option value="">{{ selected[0] }}</option>
+                                    <option>{{ selected[1] }}</option>
                                 </select>
                             </div>
                             <div class="col-2">
-                                <button type="submit" class="btn btn-success w-100">SEARCH</button>
+                                <button type="submit" class="btn btn-warning w-100">SEARCH</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
+            <!-- search result -->
             <!-- :class="{'none': movieList.length === 0} ==>> Показувати карточку коли список не порожній  -->
             <!-- <div class="card text-bg-dark" :class="{'none': movieList.length === 0}"> -->
-            <div class="card text-bg-dark" v-if="movieList.length !== 0">
-                <div class="card-header text-bg-dark">
-                    <h3>Movie List</h3>
+            <div class="card text-bg-warning mb-4" v-if="movieList.length !== 0">
+                <div class="card-header text-bg-warning">
+                    <h3>Search result</h3>
                 </div>
                 <div class="card-body text-bg-dark d-flex flex-wrap">
                     <div class="card col-4" v-for="movie in movieList" :key="movie.imdbID">
-                        <!-- <img :src="movie.Poster" class="card-img-top" :alt="movie.Title"> -->
+                        <img :src="movie.Poster" class="card-img-top" :alt="movie.Title">
                         <div class="card-body text-bg-dark my_card">
                             <h5 class="card-title">{{ movie.Title }}</h5>
                             <p class="card-text">{{ movie.Year }}</p>
@@ -57,13 +60,13 @@
             </div>
 
             <!-- favourites list -->
-            <div class="card text-bg-dark" v-if="favourite.length !== 0">
-                <div class="card-header text-bg-dark">
-                    <h3>Favourites List</h3>
+            <div class="card text-bg-warning" v-if="favourite.length !== 0">
+                <div class="card-header text-bg-warning">
+                    <h3>My favourite films </h3>
                 </div>
                 <div class="card-body text-bg-dark d-flex flex-wrap">
                     <div class="card col-4" v-for="movie in favourite" :key="movie.imdbID">
-                        <!-- <img :src="movie.Poster" class="card-img-top" :alt="movie.Title"> -->
+                        <img :src="movie.Poster" class="card-img-top" :alt="movie.Title">
                         <div class="card-body text-bg-dark my_card">
                             <h5 class="card-title">{{ movie.Title }}</h5>
                             <p class="card-text">{{ movie.Year }}</p>
