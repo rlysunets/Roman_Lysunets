@@ -64,7 +64,7 @@ const App = {
             
                 fetch(`https://api.telegram.org/bot${this.API_BOT_ID}/sendMessage?chat_id=${this.CHAT_ID}&text=${message_text}&parse_mode=HTML`)
                     .then(resp => {
-                        console.log(resp);
+                        // console.log(resp);
                         return resp.json()
                     })
                     .then(resp => {

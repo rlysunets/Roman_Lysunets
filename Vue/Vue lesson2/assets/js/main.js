@@ -3,6 +3,7 @@ const App = {
         return {
             API_KEY: "e6735353",
             search: "batman",
+            selected: "",
             movieList: [],
             movieInfo: {},
             favourite: [],
@@ -12,18 +13,19 @@ const App = {
         }
     },
     created() {
-        // console.log(this.storage);
+        // при загрузці берем дані з localStorage і записуєм у нашу змінну storage
         const local = localStorage.getItem("user_favourites")
         this.storage = JSON.parse(local)
-        // console.log(this.storage);
-        // console.log(this.favourite);
 
-
+        // перебираєм storage і записуем у favourite, щоб відобразити при завантаженні App
+        for (key in this.storage) {
+            this.favourite.push(this.storage[key])
+        }
     },
     methods: {
         searchMovie() {
             if (this.search !== "") {
-                axios.get(`http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}`)
+                axios.get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}`)
                 .then(response => {
                     this.movieList = response.data.Search
                     this.search = ""
@@ -35,7 +37,7 @@ const App = {
             this.showModal = true
         },
         getMovieInfo(id) {
-            axios.get(`http://www.omdbapi.com/?apikey=${this.API_KEY}&i=${id}`)
+            axios.get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&i=${id}`)
             .then(response => {
                 this.movieInfo = response.data
                 this.showMovieInfo()
@@ -49,10 +51,7 @@ const App = {
 
                 this.favourite.push(this.movieList[index]);
                 localStorage.setItem("user_favourites", JSON.stringify(this.favourite))
-                // console.log(this.movieList[index]);
-                console.log(this.favourite);
             }
-            
         },
         showErr(err) {
             let html = ""
