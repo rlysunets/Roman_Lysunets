@@ -18,7 +18,6 @@
         position: relative;
     }
 }
-
 .my_btn {
     position: absolute;
     right: 20px;
@@ -27,12 +26,8 @@
 .none {
     display: none;
 }
-.block {
-    display: block;
-}
 .my_card {
-    position: relative;
-    
+    position: relative; 
 }
 .favourite {
     position: absolute;
@@ -40,14 +35,14 @@
     right: 20px;
     height: 40px;
     width: 40px;
-    .active {
-        svg {
-            fill: #F44336;
-        }
-    }
 }
 svg {
     width: 100%;
     height: 100%;
 }
-
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}

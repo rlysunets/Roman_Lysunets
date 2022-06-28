@@ -15,47 +15,45 @@
             <h2 class="display-4 text-uppercase text-white text-center fw-bold mb-5">movie search service</h2>
             <div class="card text-bg-dark mb-4">
                 <div class="card-body">
+
+                    <!-- form -->
                     <form action="" id="search_form" @submit.prevent="searchMovie">
                         <div class="row">
+                            <!-- input -->
                             <div class="col-8">
                                 <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
                             </div>
+                            <!-- select -->
                             <div class="col-2">
                                 <select class="form-select" v-model="select">
-                                    <!-- <option v-for="select in selected">{{ select }}</option> -->
-                                    <option value="">{{ selected[0] }}</option>
-                                    <option>{{ selected[1] }}</option>
+                                    <option v-for="select in selected"> {{ select }} </option>
+                                    <!-- <option>{{ selected[0] }}</option>
+                                    <option>{{ selected[1] }}</option> -->
                                 </select>
                             </div>
+                            <!-- button -->
                             <div class="col-2">
                                 <button type="submit" class="btn btn-warning w-100">SEARCH</button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
 
             <!-- search result -->
             <!-- :class="{'none': movieList.length === 0} ==>> Показувати карточку коли список не порожній  -->
-            <!-- <div class="card text-bg-dark" :class="{'none': movieList.length === 0}"> -->
             <div class="card text-bg-warning mb-4" v-if="movieList.length !== 0">
                 <div class="card-header text-bg-warning">
                     <h3>Search result</h3>
                 </div>
                 <div class="card-body text-bg-dark d-flex flex-wrap">
-                    <div class="card col-4" v-for="movie in movieList" :key="movie.imdbID">
-                        <img :src="movie.Poster" class="card-img-top" :alt="movie.Title">
-                        <div class="card-body text-bg-dark my_card">
-                            <h5 class="card-title">{{ movie.Title }}</h5>
-                            <p class="card-text">{{ movie.Year }}</p>
-                            <button type="button" class="btn btn-warning" @click="getMovieInfo(movie.imdbID)">Detail</button>
-                            <button class="btn btn-secondary favourite" @click="addToFavourites(movie.imdbID)"> 
-                                <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
-                                    <path fill="#fff" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+
+                    <!-- component -->
+                    <template v-for="movie in movieListWithFavourite()" :key="movie.imdbID">
+                        <movie-item :movie="movie" @get-movie="getMovieInfo" @add-to-favourites="addToFavourites"/>
+                    </template>
+
                 </div>
             </div>
 
@@ -65,43 +63,62 @@
                     <h3>My favourite films </h3>
                 </div>
                 <div class="card-body text-bg-dark d-flex flex-wrap">
-                    <div class="card col-4" v-for="movie in favourite" :key="movie.imdbID">
-                        <img :src="movie.Poster" class="card-img-top" :alt="movie.Title">
-                        <div class="card-body text-bg-dark my_card">
-                            <h5 class="card-title">{{ movie.Title }}</h5>
-                            <p class="card-text">{{ movie.Year }}</p>
-                            <button type="button" class="btn btn-warning" @click="getMovieInfo(movie.imdbID)">Detail</button>
-                            <button class="btn btn-secondary favourite" @click="addToFavourites(movie.imdbID)"> 
-                                <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
-                                    <path fill="#fff" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+
+                    <!-- component -->
+                    <template v-for="movie in favourite" :key="movie.imdbID">
+                        <movie-item :movie="movie" @get-movie="getMovieInfo" @add-to-favourites="addToFavourites"/>
+                    </template>
+
                 </div>
             </div>
         </div>
 
+        <!-- modal window для Detail -->
         <div class="modal_overlay" v-if="showModal">
-            <div class="my_modal text-bg-secondary">
-                <div><b>Title: </b>{{ movieInfo.Title }}</div>
-                <div><b>Year: </b>{{ movieInfo.Year }}</div>
-                <div><b>Director: </b>{{ movieInfo.Director }}</div>
-                <div><b>Actors: </b>{{ movieInfo.Actors }}</div>
-                <div><b>Rating: </b> {{ movieInfo.Ratings[0].Value }}</div>
-                <div><b>Type: </b>{{ movieInfo.Type }}</div>
-                <div><b>Runtime: </b>{{ movieInfo.Runtime }}</div>
-                <div><b>Country: </b>{{ movieInfo.Country }}</div>
-                <div><b>Language: </b>{{ movieInfo.Language }}</div>
+            <div class="my_modal text-bg-secondary d-flex">
+                <div class="pic col-4">
+                    <img :src="movieInfo.Poster" class="card-img-top" :alt="movieInfo.Title" v-if="movieInfo.Poster !== 'N/A'">
+                    <!-- фото-заглушка коли movieInfo.Poster немає  -->
+                    <img src="https://via.placeholder.com/186x280" class="card-img-top" :alt="movieInfo.Title" v-else>
+                </div>
+                <div class="content col-8 ps-3">
+                    <div><b>Title: </b>{{ movieInfo.Title }}</div>
+                    <div><b>Year: </b>{{ movieInfo.Year }}</div>
+                    <div><b>Director: </b>{{ movieInfo.Director }}</div>
+                    <div><b>Actors: </b>{{ movieInfo.Actors }}</div>
+                    <div v-if="movieInfo.Ratings.length !== 0">
+                        <b>Rating: </b> {{ movieInfo.Ratings[0].Value }}
+                    </div>
+                    <div><b>Type: </b>{{ movieInfo.Type }}</div>
+                    <div><b>Runtime: </b>{{ movieInfo.Runtime }}</div>
+                    <div><b>Country: </b>{{ movieInfo.Country }}</div>
+                    <div><b>Language: </b>{{ movieInfo.Language }}</div>
+                </div>
                 <button type="button" class="btn btn-light my_btn" @click="showModal = false">X</button>
             </div>
         </div>
 
     </div>
 
+    <!-- component  => після App-->
+    <template id="movieItem">
+        <div class="card col-4">
+            <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
+            <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else>
+            <div class="card-body text-bg-dark my_card">
+                <h5 class="card-title">{{ movie.Title }}</h5>
+                <p class="card-text">{{ movie.Year }}</p>
+                <button type="button" class="btn btn-warning" @click="getMovieInfo(movie.imdbID)">Detail</button>
+                <button class="btn btn-secondary favourite" @click="addToFavourites(movie.imdbID)"> 
+                    <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                        <path :fill="movie.inFav ? '#f00' : '#fff'" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </template>
 
-
-
+    
     <script src="assets/js/vue.global.js"></script>
     <script src="assets/plugins/axios/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
