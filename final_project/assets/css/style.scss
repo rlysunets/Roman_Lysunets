@@ -35,9 +35,6 @@ header {
             }
         }
     }
-    &_button {
-        
-    }
 } 
 
 // button styles ==============================================================
@@ -54,9 +51,10 @@ header {
     padding: 8px 0;
     border: none;
     &:hover {
-        background-color: rgba(32, 148, 230, .9);
-        outline: 1px solid #FFFFFF;
-        transition: all .5s ease;
+        color: #2194e6;
+        background-color: #FFFFFF;
+        outline: 2px solid #2194e6;
+        transition: all .3s ease;
     }
 }
 
@@ -121,7 +119,7 @@ header {
 }
 
 // Home ========================================================================
-// section hero
+// section hero ================================================================
 
 .hero {
     background-image: url(../images/home/hero.jpg);
@@ -147,6 +145,77 @@ header {
             margin-bottom: 25px;
         }
     }
+}
+
+//  section explore ============================================================
+.explore {
+    padding: 120px 0;
+    &_wrap {
+        display: flex;
+        gap: 8%;
+        .explore_photos {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-basis: 50%;
+            .pic {
+                max-width: 557px;
+                img {
+                    padding: 10px;
+                    border: 2px solid #E3DEC1;
+                }
+            }
+            .pic_positioned {
+                width: 386px;
+                position: absolute;
+                left: 40%;
+                bottom: -20%;
+            }
+        }
+        .explore_content {
+            flex-basis: 42%;
+            padding: 40px 0 0 20px;
+            .explore_hint {
+                margin-bottom: 10px;
+            }
+            .explore_title {
+                margin-bottom: 20px;
+            }
+            .explore_decr {
+                margin-bottom: 20px;
+                p {
+                    font-family: 'Work Sans';
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 150%;
+                    color: #333333;
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// section_title ==============================================================
+.section_title {
+    font-family: 'Playfair Display';
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 60px;
+    color: #121212;
+}
+// hint =======================================================================
+.hint {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2094E6;
 }
 
 // footer styles ===============================================================
@@ -209,6 +278,38 @@ footer {
     }
 }
 
+
+
+@media screen and (min-width: 1700px) {
+    .hero {
+        background-position: 0 50%;
+    }
+} 
+@media screen and (max-width: 1100px) {
+    .explore {
+        &_wrap {
+            gap: 0;
+            .explore_photos {
+                flex-basis: 55%;
+                .pic {
+                    margin-bottom: 10px;
+                }
+                .pic_positioned {
+                    position: static;
+                    width: 100%;
+                    img {
+                        padding: 10px;
+                        border: 2px solid #E3DEC1;
+                    }
+                }
+            }
+            .explore_content {
+                flex-basis: 45%;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 992px) {
     .header {
         gap: 40px;
@@ -222,7 +323,6 @@ footer {
     .footer {
         &_content {
             flex-wrap: wrap;
-            // gap: 20px;
             .footer_logo {
                 flex: 100%;
                 margin-bottom: 25px;
@@ -233,6 +333,34 @@ footer {
         }
     }
 }
+@media screen and (max-width: 800px) {
+    .explore {
+        padding: 60px 0;
+        &_wrap {
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            .explore_photos {
+                display: flex;
+                flex-basis: 100%;
+                .pic {
+                    flex-basis: 50%;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                }
+                .pic_positioned {
+                    flex-basis: 50%;
+                }
+            }
+            .explore_content {
+                flex-basis: 100%;
+                padding: 30px 0 0 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 750px) {
     .hero {
         &_wrap {
@@ -255,6 +383,25 @@ footer {
 @media screen and (max-width: 600px) {
     .header_button {
         display: none;
+    }
+    .section_title {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .explore {
+        &_wrap {
+            .explore_photos {
+                flex-wrap: wrap;
+                .pic {
+                    flex-basis: 100%;
+                    margin-bottom: 5px;
+                    margin-right: 0;
+                }
+                .pic_positioned {
+                    flex-basis: 100%;
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 480px) {
