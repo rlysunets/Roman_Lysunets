@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "assets/images/home/guide.svg",
+        "title": "Full Guide",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "icon": "assets/images/home/transport.svg",
+        "title": "Transport",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "icon": "assets/images/home/book.svg",
+        "title": "Easy Book",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "icon": "assets/images/home/fire.svg",
+        "title": "Camp Fire",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+]
