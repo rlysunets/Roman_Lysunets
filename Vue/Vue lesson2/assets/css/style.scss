@@ -1,7 +1,9 @@
 [v-cloak] {
     display: none;
 }
-
+.container {
+    position: relative;
+}
 .modal_overlay {
     position: fixed;
     left: 0;
@@ -57,6 +59,16 @@ input, select {
     background-color: lightgrey !important;
 }
 
+button img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-theme {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
 // theme
 .light-theme {
     background-color: antiquewhite !important;
