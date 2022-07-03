@@ -20,25 +20,28 @@
         width: 90%;
         max-width: 600px;
         position: relative;
+        .modal_btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
     }
 }
 .my_btn {
     position: absolute;
+    bottom: 17px;
     right: 20px;
-    top: 20px;
+    height: 38px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .none {
     display: none;
 }
 .my_card {
     position: relative; 
-}
-.favourite {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    height: 40px;
-    width: 40px;
 }
 svg {
     width: 100%;
@@ -49,4 +52,28 @@ img {
     height: 100%;
     object-fit: cover;
     vertical-align: top;
+}
+input, select {
+    background-color: lightgrey !important;
+}
+
+// theme
+.light-theme {
+    background-color: antiquewhite !important;
+    h2 {
+        color: #000 !important;
+    }
+    .btn {
+        background-color: lightgrey !important;
+    }
+    .card,
+    .card-header,
+    .card-bogy,
+    .text-bg-dark {
+        background-color: antiquewhite !important;
+        color: #000 !important;
+    }
+    .pagination {
+        background-color: antiquewhite !important;
+    }
 }

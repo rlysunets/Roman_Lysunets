@@ -9,19 +9,29 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
-<body class="bg-secondary">
+
+<!--  -->
+<body style="background-color: lightgrey">
     <div id="app" v-cloak>
-        <div class="container pt-5" >
-            <h2 class="display-4 text-uppercase text-white text-center fw-bold mb-5">movie search service</h2>
+        <div class="container bg-dark pt-5" :class="theme === 'light' ? 'light-theme' : 'dark-theme'">
+            <h2 class="display-4 text-uppercase text-white text-center fw-bold mb-5 header">movie search service</h2>
+
+            <div class="theme d-flex justify-content-end mb-3">
+                <button class="btn btn-warning" @click="changeTheme"> Switch theme</button>
+            </div>
+
             <div class="card text-bg-dark mb-4">
                 <div class="card-body">
 
                     <!-- form -->
                     <form action="" id="search_form" @submit.prevent="searchMovie">
                         <div class="row">
-                            <!-- input -->
-                            <div class="col-8">
-                                <input type="search" class="form-control" placeholder="Enter movie title" v-model="search">
+                            <!-- inputs-->
+                            <div class="col-6">
+                                <input type="search" class="form-control" placeholder="Movie title to search for." v-model="search">
+                            </div>
+                            <div class="col-2">
+                                <input type="search" class="form-control" placeholder="Year of release." v-model="year">
                             </div>
                             <!-- select -->
                             <div class="col-2">
@@ -53,9 +63,40 @@
                     <template v-for="movie in movieListWithFavourite()" :key="movie.imdbID">
                         <movie-item :movie="movie" @get-movie="getMovieInfo" @add-to-favourites="addToFavourites"/>
                     </template>
+                    
+                </div>
+                <div class="pagination d-flex justify-content-center flex-wrap bg-dark">
+                    <button 
+                        type="button"
+                        class="btn btn-secondary mb-2" 
+                        @click="goToPage(page-1, activeItem-1)"
+                        :disabled="page === 1"
+                        >
+                        <<
+                    </button>
 
+                    <button 
+                        type="button" 
+                        class="btn btn-secondary mb-2"
+                        v-for="(page, i) in totalPages"
+                        :key="i"  
+                        @click="goToPage(page, i)"
+                        :class="{ 'btn-warning': i === activeItem}" 
+                        >
+                        {{ page }}
+                    </button>
+
+                    <button 
+                        type="button"
+                        class="btn btn-secondary mb-2" 
+                        @click="goToPage(page+1,activeItem+1)"
+                        :disabled="page === totalPages"
+                        >
+                        >>
+                    </button>
                 </div>
             </div>
+            
 
             <!-- favourites list -->
             <div class="card text-bg-warning" v-if="favourite.length !== 0">
@@ -86,15 +127,28 @@
                     <div><b>Year: </b>{{ movieInfo.Year }}</div>
                     <div><b>Director: </b>{{ movieInfo.Director }}</div>
                     <div><b>Actors: </b>{{ movieInfo.Actors }}</div>
-                    <div v-if="movieInfo.Ratings.length !== 0">
-                        <b>Rating: </b> {{ movieInfo.Ratings[0].Value }}
-                    </div>
                     <div><b>Type: </b>{{ movieInfo.Type }}</div>
                     <div><b>Runtime: </b>{{ movieInfo.Runtime }}</div>
                     <div><b>Country: </b>{{ movieInfo.Country }}</div>
                     <div><b>Language: </b>{{ movieInfo.Language }}</div>
+                    <div v-if="movieInfo.Ratings.length !== 0">
+                        <div class="mb-2">
+                            <b>Rating: </b> {{ movieInfo.Ratings[0].Value }}
+                        </div>
+                        <div class="progress">
+                            <div 
+                                class="progress-bar bg-warning pt-2" 
+                                role="progressbar" 
+                                :style="{ 'width': rating }" 
+                                aria-valuenow="parseInt(rating)" 
+                                aria-valuemin="0" 
+                                aria-valuemax="100"
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-light my_btn" @click="showModal = false">X</button>
+                <button type="button" class="btn btn-light modal_btn" @click="showModal = false">X</button>
             </div>
         </div>
 
@@ -109,7 +163,7 @@
                 <h5 class="card-title">{{ movie.Title }}</h5>
                 <p class="card-text">{{ movie.Year }}</p>
                 <button type="button" class="btn btn-warning" @click="getMovieInfo(movie.imdbID)">Detail</button>
-                <button class="btn btn-secondary favourite" @click="addToFavourites(movie.imdbID)"> 
+                <button class="btn btn-secondary my_btn" @click="addToFavourites(movie.imdbID)"> 
                     <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
                         <path :fill="movie.inFav ? '#f00' : '#fff'" d="M34,9c-4.2,0-7.9,2.1-10,5.4C21.9,11.1,18.2,9,14,9C7.4,9,2,14.4,2,21c0,11.9,22,24,22,24s22-12,22-24 C46,14.4,40.6,9,34,9z"/>
                     </svg>

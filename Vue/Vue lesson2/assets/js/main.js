@@ -15,51 +15,69 @@ const App = {
     data() {
         return {
             API_KEY: "e6735353",
-            search: "",
-            selected: ["Movie", "Series"],
+            search: "titanic",
+            selected: ["Movie", "Series", "Episode"],
             select: "Movie",
+            year: "",
             movieList: [],
             movieInfo: {},
             favourite: [],
             showModal: false,
-            storage: {}
+            // rating
+            rating: "",
+            // theme
+            theme: "dark",
+            // pagination
+            totalPages: 0,
+            page: 1, 
+            activeItem: 0,
         }
     },
     components: {
         movieItem
     },
     created() {
-        // при завантаженні додатку берем дані з localStorage і записуєм у змінну storage
-        const local = localStorage.getItem("user_favourites")
-        this.storage = JSON.parse(local)
-
-        // перебираєм storage і записуем у favourite, щоб відобразити при завантаженні App
-        for (key in this.storage) {
-            this.favourite.push(this.storage[key])
-        }
+        // при завантаженні додатку берем дані з localStorage і записуєм у змінну favourite
+        this.favourite = JSON.parse(localStorage.getItem("user_favourites"))
+        // theme cookie
+        this.theme = document.cookie
     },
     methods: {
         searchMovie() {
             if (this.search !== "") {
                 axios
-                .get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.select}`)
+                .get(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.select}&page=${this.page}&y=${this.year}`)
                     .then(response => {
+                    // перевырка року
+                    if (this.year.length !== 0 && this.year.length !== 4 ) {
+                        this.showInfo("Year must contain four digits.")
+                        // this.year = ""
+                    } else if (this.year.length === 4 && this.year < 1900 || this.year > new Date().getFullYear()) {
+                        this.showInfo(`Enter year from 1900 to ${new Date().getFullYear()}.`)
+                    }
                     //  якщо статус 200, але фільму немає у списку пошуку
-                    if (response.data.Response === "False") {
+                    else if (response.data.Response === "False") {
                         this.showInfo("Movie not found!")
                     } else {
-                        this.movieList = response.data.Search              
+                        this.movieList = response.data.Search
+                        // рахуємо кількість сторінок з фільмами
+                        this.totalPages = Math.ceil(response.data.totalResults / 10)
                     }
-                    this.search = "" 
+                    // this.search = "" 
                 })
                 //  не вдалося зєднатия з сервером. Н-д не вірний ключ   
                 .catch(error => {
                     this.showInfo(`${error.code}. Try again later.`)
                 })
             //  ПУстий рядок в запиті
-            } else {
+            } else  {
                 this.showInfo("Enter movie title.")
-            }
+            } 
+        },
+        goToPage(pageNum, i) {
+            this.page = pageNum
+            this.activeItem = i;
+            this.searchMovie()
         },
         // запит на один, конкретний фільм. Спрацьоовує при натисканні по кнопці Detail.
         // Шукаєм інформацію про цей фільм передаючи id, тобто imdbID
@@ -68,6 +86,8 @@ const App = {
             .then(response => {
                 // Результат записуєм у movieInfo
                 this.movieInfo = response.data
+
+                this.rating = (this.movieInfo.imdbRating * 10) + "%"
                 this.showMovieInfo()
             })
             .catch(error => {
@@ -95,8 +115,13 @@ const App = {
                 this.showInfo("Added to favourite films.")
             } else {
                 // якщо фільм є у favourite, вирізаєм його із масиву
-                this.favourite.splice(index2, 1)
-                this.showInfo("Removed from favourite films.")
+                if (this.favourite.length > 1) {
+                    this.favourite.splice(index2, 1)
+                    this.showInfo("Removed from favourite films.")
+                } else {
+                    this.favourite.splice(index2, 1)
+                    this.showInfo("Removed from favourite films. List with favourite films is empty.")
+                } 
             }
             // незалежно чи ми додаєм фільм чи видаляєм, localStorage перезаписується
             localStorage.setItem("user_favourites", JSON.stringify(this.favourite))
@@ -116,6 +141,18 @@ const App = {
             })
             return arr
         },
+        // метод для зміни теми
+        changeTheme() {
+            if(this.theme === "dark") {
+                this.theme = "light"
+                document.cookie = "light"
+            } else {
+                this.theme = "dark"
+                document.cookie = "dark"
+            }
+            // без кукі
+            // this.theme = this.theme === "dark" ? "light" : "dark"
+        },
         // метод для виведення модального вікна з повідомленнями
         showInfo(text) {
             let html = ""
@@ -133,7 +170,7 @@ const App = {
                 el.classList.add("none")
 
             },2000)
-        }
+        },
     }
 }
 
