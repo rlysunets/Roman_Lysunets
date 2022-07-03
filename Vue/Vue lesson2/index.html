@@ -11,7 +11,7 @@
 </head>
 
 <!--  -->
-<body style="background-color: lightgrey">
+<body>
     <div id="app" v-cloak>
         <div class="container bg-dark pt-5" :class="theme === 'light' ? 'light-theme' : 'dark-theme'">
             <h2 class="display-4 text-uppercase text-white text-center fw-bold mb-5 header">movie search service</h2>
@@ -25,16 +25,16 @@
 
                     <!-- form -->
                     <form action="" id="search_form" @submit.prevent="searchMovie">
-                        <div class="row">
+                        <div class="row gy-3">
                             <!-- inputs-->
-                            <div class="col-6">
+                            <div class="col-12 col-md-5">
                                 <input type="search" class="form-control" placeholder="Movie title to search for." v-model="search">
                             </div>
-                            <div class="col-2">
+                            <div class="col-4 col-md-3">
                                 <input type="search" class="form-control" placeholder="Year of release." v-model="year">
                             </div>
                             <!-- select -->
-                            <div class="col-2">
+                            <div class="col-4 col-md-2">
                                 <select class="form-select" v-model="select">
                                     <option v-for="select in selected"> {{ select }} </option>
                                     <!-- <option>{{ selected[0] }}</option>
@@ -42,7 +42,7 @@
                                 </select>
                             </div>
                             <!-- button -->
-                            <div class="col-2">
+                            <div class="col-4 col-md-2">
                                 <button type="submit" class="btn btn-warning w-100">SEARCH</button>
                             </div>
                         </div>
@@ -116,13 +116,13 @@
 
         <!-- modal window для Detail -->
         <div class="modal_overlay" v-if="showModal">
-            <div class="my_modal text-bg-secondary d-flex">
-                <div class="pic col-4">
+            <div class="my_modal text-bg-secondary d-flex flex-wrap">
+                <div class="pic col-12 col-sm-4">
                     <img :src="movieInfo.Poster" class="card-img-top" :alt="movieInfo.Title" v-if="movieInfo.Poster !== 'N/A'">
                     <!-- фото-заглушка коли movieInfo.Poster немає  -->
                     <img src="https://via.placeholder.com/186x280" class="card-img-top" :alt="movieInfo.Title" v-else>
                 </div>
-                <div class="content col-8 ps-3">
+                <div class="content col-12 col-sm-8 ps-3">
                     <div><b>Title: </b>{{ movieInfo.Title }}</div>
                     <div><b>Year: </b>{{ movieInfo.Year }}</div>
                     <div><b>Director: </b>{{ movieInfo.Director }}</div>
@@ -156,7 +156,7 @@
 
     <!-- component  => після App-->
     <template id="movieItem">
-        <div class="card col-4">
+        <div class="card bg-dark col-12 col-sm-6 col-md-4 col-xl-3 p-3">
             <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
             <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else>
             <div class="card-body text-bg-dark my_card">
