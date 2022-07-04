@@ -24,9 +24,9 @@ body {
         border-radius: 8px;
         background-color: #fff;
         padding: 20px;
-        width: 90%;
         max-width: 600px;
         position: relative;
+        overflow: auto;
         .modal_btn {
             position: absolute;
             right: 20px;
@@ -98,5 +98,11 @@ button img {
     }
     .pagination {
         background-color: antiquewhite !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .my_modal {
+        height: 100vh;
     }
 }
