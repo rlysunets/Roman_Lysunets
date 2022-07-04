@@ -15,4 +15,6 @@ $(function () {
     $(".hamburger").on("click", function() {
         $(this).addClass("none");
     })
+
+    
 })
