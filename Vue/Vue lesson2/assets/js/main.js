@@ -88,7 +88,7 @@ const App = {
     },
     created() {
         // при завантаженні додатку берем дані з localStorage і записуєм у змінну favourite
-        this.favourite = JSON.parse(localStorage.getItem("user_favourites"))
+        this.favourite = JSON.parse(localStorage.getItem("user_favourites")) || []
         // theme cookie
         this.theme = document.cookie
     },
