@@ -1,4 +1,4 @@
-const movieItem = {
+const MovieItem = {
     props: ["movie"],
     methods: {
         getMovieInfo(id) {
@@ -9,6 +9,55 @@ const movieItem = {
         }
     },
     template: "#movieItem"
+}
+
+const Pagination = {
+    props: {
+        // поточна сторінка
+        page: {
+            // тип
+            type: Number,
+            // значення за замовчуванням
+            default: 1,
+            // чи є обов*язкомим
+            required: true
+        },
+        // к-сть сторінок
+        total: {
+            type: Number,
+            default: 0,
+            required: true
+        }
+    },
+    methods: {
+        goToPage(new_page) {
+            this.$emit("goToPage", new_page)
+            console.log(new_page);
+            
+        },
+    },
+    computed: {
+        from() {
+            let from = this.page - 2
+            if (from < 1) {
+                return 1
+            } else {
+                return from
+            }
+
+            // return this.page - 2
+        },
+        to() {
+            let to = this.page + 2
+            if (to > this.total) {
+                return this.total
+            } else {
+                return to
+            }
+            // return this.page + 2
+        }
+    },
+    template: "#pagination"
 }
 
 const App = {
@@ -30,11 +79,12 @@ const App = {
             // pagination
             totalPages: 0,
             page: 1, 
-            activeItem: 0,
+            // activeItem: 0,
         }
     },
     components: {
-        movieItem
+        MovieItem,
+        Pagination
     },
     created() {
         // при завантаженні додатку берем дані з localStorage і записуєм у змінну favourite
@@ -74,9 +124,8 @@ const App = {
                 this.showInfo("Enter movie title.")
             } 
         },
-        goToPage(pageNum, i) {
-            this.page = pageNum
-            this.activeItem = i;
+        goToPage(newPage) {
+            this.page = newPage
             this.searchMovie()
         },
         // запит на один, конкретний фільм. Спрацьоовує при натисканні по кнопці Detail.

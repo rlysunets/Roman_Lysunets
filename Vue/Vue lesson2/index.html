@@ -63,9 +63,12 @@
                     <template v-for="movie in movieListWithFavourite()" :key="movie.imdbID">
                         <movie-item :movie="movie" @get-movie="getMovieInfo" @add-to-favourites="addToFavourites"/>
                     </template>
-                    
+ 
                 </div>
-                <div class="pagination d-flex justify-content-center flex-wrap bg-dark">
+                     <pagination :page="page" :total="totalPages" @go-to-page="goToPage">
+
+                    </pagination>
+                <!-- <div class="pagination d-flex justify-content-center flex-wrap bg-dark">
                     <button 
                         type="button"
                         class="btn btn-secondary mb-2" 
@@ -94,7 +97,7 @@
                         >
                         >>
                     </button>
-                </div>
+                </div> -->
             </div>
             
 
@@ -154,11 +157,11 @@
 
     </div>
 
-    <!-- component  => після App-->
+    <!-- components  => після App-->
     <template id="movieItem">
         <div class="card bg-dark col-12 col-sm-6 col-md-4 col-xl-3 p-3">
-            <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
-            <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else>
+            <!-- <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
+            <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else> -->
             <div class="card-body text-bg-dark my_card">
                 <h5 class="card-title">{{ movie.Title }}</h5>
                 <p class="card-text">{{ movie.Year }}</p>
@@ -170,6 +173,44 @@
                 </button>
             </div>
         </div>
+    </template>
+
+    <template id="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" :class="{'disabled': page === 1}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
+                </li>
+
+                <template v-if="page >= 5">
+                    <li class="page-item">
+                        <a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
+                    </li>
+                    <li class="page-item">
+                        ...
+                    </li>
+                </template>
+
+                <li class="page-item" v-for="p in (from, to)" :key="p" :class="{'active': p === page}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(p)">{{ p }}</a>
+                </li>
+
+                <template v-if="page < total-3">
+
+                    <li class="page-item">
+                        ...
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" @click.prevent="goToPage(total)">{{ total }}</a>
+                    </li>
+
+                </template>
+
+                <li class="page-item" :class="{'disabled': page === total}">
+                    <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
+                </li>
+            </ul>
+        </nav>
     </template>
 
     
