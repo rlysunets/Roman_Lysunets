@@ -1,6 +1,7 @@
 var Vue = (function (exports) {
   'use strict';
 
+
   /**
    * Make a map and return a function for checking if a key
    * is in that map.
