@@ -160,8 +160,8 @@
     <!-- components  => після App-->
     <template id="movieItem">
         <div class="card bg-dark col-12 col-sm-6 col-md-4 col-xl-3 p-3">
-            <!-- <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
-            <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else> -->
+            <img :src="movie.Poster" class="card-img-top" :alt="movie.Title" v-if="movie.Poster !== 'N/A'">
+            <img src="https://via.placeholder.com/420x640" class="card-img-top" :alt="movie.Title" v-else>
             <div class="card-body text-bg-dark my_card">
                 <h5 class="card-title">{{ movie.Title }}</h5>
                 <p class="card-text">{{ movie.Year }}</p>
@@ -202,7 +202,7 @@
                     </li>
                     <li class="page-item">
                         <a class="page-link" href="#" @click.prevent="goToPage(total)">{{ total }}</a>
-                    </li>
+                         </li>
 
                 </template>
 
