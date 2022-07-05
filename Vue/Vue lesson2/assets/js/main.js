@@ -1,4 +1,4 @@
-const MovieItem = {
+const movieItem = {
     props: ["movie"],
     methods: {
         getMovieInfo(id) {
@@ -83,7 +83,7 @@ const App = {
         }
     },
     components: {
-        MovieItem,
+        movieItem,
         Pagination
     },
     created() {
