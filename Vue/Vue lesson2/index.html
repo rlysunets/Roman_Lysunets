@@ -24,7 +24,7 @@
                 <div class="card-body">
 
                     <!-- form -->
-                    <form action="" id="search_form" @submit.prevent="searchMovie">
+                    <form action="" id="search_form" @submit.prevent="newSearch">
                         <div class="row gy-3">
                             <!-- inputs-->
                             <div class="col-12 col-md-5">
@@ -177,12 +177,12 @@
 
     <template id="pagination">
         <nav aria-label="Page navigation example">
-            <ul class="pagination d-flex flex-wrap">
-                <li class="page-item" :class="{'disabled': page === 1}">
+            <ul class="pagination d-flex justify-content-center">
+                <li class="page-item" :class="{'disabled': isDisabledFirst}">
                     <a class="page-link" href="#" @click.prevent="goToPage(page-1)">Previous</a>
                 </li>
 
-                <template v-if="page >= 5">
+                <template v-if="showFirst">
                     <li class="page-item">
                         <a class="page-link" href="#" @click.prevent="goToPage(1)">1</a>
                     </li>
@@ -191,22 +191,20 @@
                     </li>
                 </template>
 
-                <li class="page-item" v-for="p in (from, to)" :key="p" :class="{'active': p === page}">
+                <li class="page-item" v-for="p in pageRange" :key="p" :class="{'active': p === page}">
                     <a class="page-link" href="#" @click.prevent="goToPage(p)">{{ p }}</a>
                 </li>
 
-                <template v-if="page < total-3">
-
+                <template v-if="showLast">
                     <li class="page-item">
                         ...
                     </li>
                     <li class="page-item">
                         <a class="page-link" href="#" @click.prevent="goToPage(total)">{{ total }}</a>
                          </li>
-
                 </template>
 
-                <li class="page-item" :class="{'disabled': page === total}">
+                <li class="page-item" :class="{'disabled': isDisabledLast}">
                     <a class="page-link" href="#" @click.prevent="goToPage(page+1)">Next</a>
                 </li>
             </ul>

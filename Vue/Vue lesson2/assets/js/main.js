@@ -32,29 +32,39 @@ const Pagination = {
     methods: {
         goToPage(new_page) {
             this.$emit("goToPage", new_page)
-            console.log(new_page);
-            
         },
     },
     computed: {
-        from() {
-            let from = this.page - 2
-            if (from < 1) {
-                return 1
-            } else {
-                return from
-            }
-
-            // return this.page - 2
+        isDisabledFirst() {
+            return this.page === 1
         },
-        to() {
+        isDisabledLast() {
+            return this.page === this.total
+        },
+        showFirst() {
+            return this.page > 4 && this.total > 6
+        },
+        showLast() {
+            return this.page < this.total - 3 && this.total > 6
+        },
+        pageRange() {
+            let from = this.page - 2
             let to = this.page + 2
-            if (to > this.total) {
-                return this.total
-            } else {
-                return to
+            if (this.page < 5) {
+                from = 1
+                to = 5
             }
-            // return this.page + 2
+            if (this.page > this.total - 4) {
+                from = this.total - 4
+                to = this.total
+            }
+            if (from < 1) {
+                from = 1 
+            }
+            if (to > this.total) {
+                to = this.total
+            }
+                return Array(to - from + 1).fill().map((_, idx) => from + idx)
         }
     },
     template: "#pagination"
@@ -126,6 +136,10 @@ const App = {
         },
         goToPage(newPage) {
             this.page = newPage
+            this.searchMovie()
+        },
+        newSearch() {
+            this.page = 1
             this.searchMovie()
         },
         // запит на один, конкретний фільм. Спрацьоовує при натисканні по кнопці Detail.

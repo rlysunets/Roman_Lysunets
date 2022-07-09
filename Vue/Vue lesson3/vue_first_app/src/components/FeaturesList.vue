@@ -1,9 +1,9 @@
 <template>
-
     <section id="features" class="features section">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 feature text-center" v-for="(feature, i) in featuresListData" :key="i">
+                <div class="col-md-4 col-sm-6 feature text-center" 
+                    v-for="(feature, i) in featuresListData" :key="i">
                     <span class="icon" :class="feature.icon"></span>
                     <div class="feature-content">
                         <h5>{{ feature.title }}</h5>
@@ -13,7 +13,6 @@
             </div>
         </div>
     </section>
-
 </template>
 
 <script>
@@ -23,8 +22,7 @@ export default {
     name: "FeaturesList",
     data() {
         return {
-            featuresListData: [],
-
+            featuresListData: []
         }
     },
     created() {
